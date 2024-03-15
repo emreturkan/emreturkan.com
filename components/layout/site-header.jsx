@@ -40,7 +40,7 @@ const SiteHeader = () => {
                 {activeTab === link.id && (
                   <motion.span
                     layoutId="bubble"
-                    className="absolute inset-0 z-10 bg-amber-50 mix-blend-difference"
+                    className="absolute inset-0 z-10 bg-nav mix-blend-difference"
                     style={{ borderRadius: 9999 }}
                     animate={{
                       scale: 1.2,
