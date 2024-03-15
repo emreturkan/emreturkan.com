@@ -31,7 +31,7 @@ const SiteNavs = ({ drawer, navLinks, activeTab, setActiveTab }) => {
               {activeTab === link.id && (
                 <motion.span
                   layoutId="bubble"
-                  className="absolute inset-0 z-10 bg-nav mix-blend-difference"
+                  className="absolute inset-0 z-10 bg-background dark:bg-foreground mix-blend-difference"
                   style={{ borderRadius: 9999 }}
                   animate={{
                     scale: 1.2,
