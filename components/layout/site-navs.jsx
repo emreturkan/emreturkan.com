@@ -8,12 +8,9 @@ const SiteNavs = ({ drawer, navLinks, activeTab, setActiveTab }) => {
   return (
     <div>
       <Menubar
-        className={cn(
-          " hidden md:flex items-center justify-center transition duration-300 ease-in-out",
-          {
-            flex: drawer,
-          }
-        )}
+        className={cn(" hidden md:flex items-center justify-center ", {
+          flex: drawer,
+        })}
       >
         <MenubarMenu>
           {navLinks.map((link) => (
@@ -23,7 +20,7 @@ const SiteNavs = ({ drawer, navLinks, activeTab, setActiveTab }) => {
               onClick={() => setActiveTab(link.id)}
               className={`${
                 activeTab === link.id ? "" : ""
-              } relative rounded-full   text-sm font-medium outline-sky-400 transition focus-visible:outline-2`}
+              } relative rounded-full  text-sm font-medium transition focus-visible:outline-2`}
               style={{
                 WebkitTapHighlightColor: "transparent",
               }}
@@ -34,11 +31,11 @@ const SiteNavs = ({ drawer, navLinks, activeTab, setActiveTab }) => {
                   className="absolute inset-0 z-10 bg-background dark:bg-foreground mix-blend-difference"
                   style={{ borderRadius: 9999 }}
                   animate={{
-                    scale: 1.2,
+                    scale: 1.1,
                   }}
                   transition={{
                     type: "spring",
-                    bounce: 0.2,
+                    bounce: 0.3,
                     duration: 0.6,
                   }}
                 />
