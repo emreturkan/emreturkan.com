@@ -1,3 +1,5 @@
-export default function Home() {
-  return <div>Merhaba Ben Emre</div>;
+import Home from "@/components/page/home";
+
+export default function HomePage() {
+  return <Home />;
 }
