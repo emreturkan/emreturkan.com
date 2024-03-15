@@ -3,7 +3,6 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
@@ -19,7 +18,7 @@ const DrawerNavs = ({ navLinks, activeTab, setActiveTab }) => {
     <div className="md:hidden transition duration-300 ease-in-out">
       <Drawer>
         <DrawerTrigger asChild>
-          <Button variant="outline">
+          <Button variant="outline" size="xs">
             <Menu />
           </Button>
         </DrawerTrigger>

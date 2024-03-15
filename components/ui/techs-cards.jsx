@@ -17,7 +17,7 @@ const TechsCards = ({ title, techs }) => {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="grid grid-cols-4 gap-4 mt-4 "
+        className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 "
       >
         {techs.map(
           (tech) =>
