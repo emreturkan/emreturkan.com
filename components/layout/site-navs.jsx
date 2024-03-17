@@ -7,7 +7,7 @@ import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 
 const SiteNavs = ({ drawer, navLinks, activeTab, setActiveTab }) => {
   return (
-    <ScrollArea className="w-full whitespace-nowrap ">
+    <ScrollArea className=" ">
       <div className="flex w-max space-x-4 p-4">
         <Menubar
           className={cn(" hidden md:flex items-center justify-center ", {

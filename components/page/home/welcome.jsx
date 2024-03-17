@@ -1,9 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-const Home = () => {
+
+const Welcome = () => {
   return (
-    <div className="  flex flex-col items-start justify-center mt-8 gap-2">
+    <div className="  flex flex-col items-start justify-center mt-4 gap-2">
       <h1 className="text-lg md:text-xl  font-bold text-accent-foreground tracking-wide mb-1 md:mb-2 flex items-center justify-center">
         Merhaba, Ben Emre
         <motion.div
@@ -37,4 +38,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Welcome;

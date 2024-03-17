@@ -18,7 +18,7 @@ const SiteHeader = () => {
   let [activeTab, setActiveTab] = useState(navLinks[0].id);
   return (
     <header>
-      <div className="flex justify-between">
+      <div className="flex items-center justify-between">
         <Avatar>
           <AvatarImage src="https://i1.sndcdn.com/artworks-000578134589-jnit8m-t500x500.jpg" />
           <AvatarFallback>ET</AvatarFallback>
