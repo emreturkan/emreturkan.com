@@ -1,5 +1,4 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent } from "@/components/ui/card";
 
 import GameActivity from "./activity/gameActivity";
 import MovieActivity from "./activity/movieActivity";

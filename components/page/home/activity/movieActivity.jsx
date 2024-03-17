@@ -12,10 +12,6 @@ import {
 const MovieActivity = async () => {
   const movie = await getMovie();
 
-  console.log("====================================");
-  console.log(movie.results[0]);
-  console.log("====================================");
-
   return (
     <Card>
       <CardContent>
