@@ -1,7 +1,6 @@
 ### Built With
 
-[![Next][Next.js]][Next-url]  [![Shadcn][Shadcn-img]][Shadcn-url]
-
+[![Next][Next.js]][Next-url] [![Shadcn][Shadcn-img]][Shadcn-url] [![TailwindCss][Tailwind-img]][Tailwind-url]
 
 Note : All commits were created by [GitButler](https://github.com/gitbutlerapp/gitbutler). I wanted to test how ai commit support works in a project.
 
@@ -42,11 +41,6 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-
-
-
-
-
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
@@ -62,9 +56,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
+[Tailwind-img]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
+[Tailwind-url]: https://tailwindcss.com/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[Shadcn-img]:https://img.shields.io/badge/Shadcn-black?style=for-the-badge&logo=shadcnui&logoColor=white
-[Shadcn-url]:https://ui.shadcn.com/
+[Shadcn-img]: https://img.shields.io/badge/Shadcn-black?style=for-the-badge&logo=shadcnui&logoColor=white
+[Shadcn-url]: https://ui.shadcn.com/
 [React-url]: https://reactjs.org/
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vue-url]: https://vuejs.org/
@@ -77,4 +73,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+[JQuery-url]: https://jquery.com
