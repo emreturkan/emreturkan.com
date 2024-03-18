@@ -22,8 +22,9 @@ const MovieActivity = async () => {
               alt={movie.results[0].title}
               width={75}
               height={100}
+              priority
               objectFit="cover"
-              className=" rounded-lg shadow  "
+              className=" rounded-lg shadow"
             />
 
             <div>

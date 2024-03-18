@@ -27,6 +27,7 @@ const GameActivity = async () => {
               height={100}
               objectFit="cover"
               className=" w-48 rounded-lg shadow h-24"
+              priority
             />
             <p className="text-xs text-muted-foreground">
               {gameDetail?.short_description}
