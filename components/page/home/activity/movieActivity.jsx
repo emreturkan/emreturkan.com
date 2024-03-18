@@ -15,16 +15,16 @@ const MovieActivity = async () => {
   return (
     <Card>
       <CardContent>
-        <div className="grid gap-4">
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+        <div className="grid gap-2">
+          <div className="flex flex-col md:flex-row items-start gap-4 md:gap-8">
             <Image
-              src={`https://image.tmdb.org/t/p/w500${movie.results[0]?.poster_path}`}
+              src={`https://image.tmdb.org/t/p/w500${movie.results[0]?.backdrop_path}`}
               alt={movie.results[0].title}
-              width={75}
+              width={400}
               height={100}
-              priority
               objectFit="cover"
-              className=" rounded-lg shadow"
+              className=" w-48 rounded-lg shadow h-24"
+              priority
             />
 
             <div>

@@ -1,6 +1,6 @@
 import {
-  getGamesDetails,
-  getLastActivity,
+  getGameActivity,
+  getGameDetails,
   getSteamStats,
 } from "@/lib/actions/get-steam";
 import Image from "next/image";
@@ -8,10 +8,8 @@ import { Clock, Trophy } from "lucide-react";
 import { minToHour } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 const GameActivity = async () => {
-  const lastActivity = await getLastActivity();
-  const gameDetail = await getGamesDetails(
-    lastActivity.response.games[0].appid
-  );
+  const lastActivity = await getGameActivity();
+  const gameDetail = await getGameDetails(lastActivity.response.games[0].appid);
   const capsule_image = gameDetail?.header_image;
   const gameInfo = await getSteamStats(lastActivity.response.games[0].appid);
 
