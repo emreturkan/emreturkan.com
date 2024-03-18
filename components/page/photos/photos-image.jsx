@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import Image from "next/image";
 import { getUnsplashPhotos } from "@/lib/actions/get-unsplash";
+import Loading from "./loading";
 const PhotosImage = async () => {
   const photos = await getUnsplashPhotos();
   return (

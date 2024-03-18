@@ -2,6 +2,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import GameActivity from "./activity/gameActivity";
 import MovieActivity from "./activity/movieActivity";
+import { Suspense } from "react";
+import Loading from "./activity/loading";
 
 const activityLinks = [
   { id: 1, name: "Oyun", path: "/" },
@@ -23,11 +25,15 @@ const Activity = async () => {
       </div>
 
       <TabsContent className="h-full w-full" value="Oyun">
-        <GameActivity />
+        <Suspense fallback={<Loading />}>
+          <GameActivity />
+        </Suspense>
       </TabsContent>
 
       <TabsContent value="Film">
-        <MovieActivity />
+        <Suspense fallback={<Loading />}>
+          <MovieActivity />
+        </Suspense>
       </TabsContent>
     </Tabs>
   );
