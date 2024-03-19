@@ -20,7 +20,10 @@ const SiteHeader = () => {
     <header>
       <div className="flex items-center justify-between">
         <Avatar>
-          <AvatarImage src="https://i1.sndcdn.com/artworks-000578134589-jnit8m-t500x500.jpg" />
+          <AvatarImage
+            src="https://i1.sndcdn.com/artworks-000578134589-jnit8m-t500x500.jpg"
+            alt="emreturkan.com avatar"
+          />
           <AvatarFallback>ET</AvatarFallback>
         </Avatar>
 
