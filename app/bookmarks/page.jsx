@@ -5,7 +5,7 @@ import React from "react";
 
 const Bookmarks = async () => {
   const accessToken = await getAccessToken();
-  const getBookmarks = await getBookmark(accessToken.access_token);
+  const getBookmarks = await getBookmark(accessToken?.access_token);
 
   return (
     <div className="w-full h-screen grid grid-cols-2 gap-4 ">
@@ -37,7 +37,7 @@ export default Bookmarks;
 
 const getAccessToken = async () => {
   try {
-    const response = await fetch("http://emret.vercel.app/api", {
+    const response = await fetch("http://localhost:3000/api", {
       method: "POST",
     });
 
