@@ -18,7 +18,7 @@ const Welcome = () => {
         Şu anda İstanbul'da yaşıyorum ve{" "}
         <Link
           target="_blank"
-          className=" text-blue-300 hover:text-blue-400 transition duration-300 ease-in-out"
+          className=" text-sky-500 hover:text-blue-400 transition duration-300 ease-in-out"
           href="https://entererp.com"
         >
           EnterERP

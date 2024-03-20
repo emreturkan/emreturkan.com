@@ -1,12 +1,10 @@
-import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/provider/nextThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import SiteHeader from "@/components/layout/site-header";
 import { siteConfig } from "@/config/site";
-
-const hanken_grotesk = Hanken_Grotesk({ subsets: ["latin"] });
+import { brandon } from "@/font/Brandon";
 
 export const metadata = {
   title: {
@@ -26,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={hanken_grotesk.className}>
+      <body className={brandon.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

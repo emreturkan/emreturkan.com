@@ -1,9 +1,8 @@
 import React from "react";
-import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import Image from "next/image";
 import { getUnsplashPhotos } from "@/lib/actions/get-unsplash";
-import Loading from "./loading";
+
 const PhotosImage = async () => {
   const photos = await getUnsplashPhotos();
   return (
@@ -22,7 +21,7 @@ const PhotosImage = async () => {
             height={500}
             placeholder="blur"
             blurDataURL={photo.urls.regular}
-            priority
+            loading="lazy"
             className="rounded mb-4"
           />
         </Link>
