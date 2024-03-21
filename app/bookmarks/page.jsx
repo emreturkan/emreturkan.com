@@ -3,7 +3,7 @@ import { siteConfig } from "@/config/site";
 import { getBookmark } from "@/lib/actions/get-bookmark";
 import ConvertDate from "@/lib/date";
 import useTagIcon from "@/lib/useTagIcon";
-import React from "react";
+import Link from "next/link";
 
 export const metadata = {
   title: {
@@ -27,15 +27,16 @@ const Bookmarks = async () => {
   return (
     <div className="w-full h-screen grid grid-cols-1 gap-4 ">
       {getBookmarks?.items?.map((bookmark) => (
-        <Card key={bookmark._id} className="text-white border-none">
+        <Card key={bookmark._id} className="text-white border-none shadow-none">
           {bookmark && (
             <div className="grid gap-4">
               <CardContent>
-                <div className="w-full md:w-9/12 p-4 grid gap-2">
-                  <h3 className="text-secondary-foreground text-base font-semibold">
-                    {" "}
-                    {bookmark.title}
-                  </h3>
+                <div className="w-full  p-4 grid gap-2">
+                  <Link href={bookmark.link} target="_blank">
+                    <h3 className="text-secondary-foreground text-base font-semibold hover:text-blue-600 transition duration-300 ease-in-out ">
+                      {bookmark.title}
+                    </h3>
+                  </Link>
                   <CardDescription>{bookmark.excerpt}</CardDescription>
                   <div className="flex text-secondary-foreground items-center gap-2">
                     {useTagIcon(bookmark.tags[0])}

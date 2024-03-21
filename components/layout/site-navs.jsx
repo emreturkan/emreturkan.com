@@ -29,7 +29,7 @@ const SiteNavs = ({ drawer, navLinks }) => {
                 {activeLink === link.path && (
                   <motion.span
                     layoutId="bubble"
-                    className="absolute inset-0 z-10 bg-background dark:bg-foreground mix-blend-difference"
+                    className="absolute inset-0 z-10 bg-background  dark:bg-foreground mix-blend-difference"
                     style={{ borderRadius: 9999 }}
                     animate={{
                       scale: 1.1,

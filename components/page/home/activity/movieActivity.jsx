@@ -13,17 +13,16 @@ const MovieActivity = async () => {
   const movie = await getMovie();
 
   return (
-    <Card>
+    <Card className="border-none shadow-none">
       <CardContent>
         <div className="grid gap-2">
           <div className="flex flex-col md:flex-row items-start gap-4 md:gap-8">
             <Image
               src={`https://image.tmdb.org/t/p/w500${movie.results[0]?.backdrop_path}`}
               alt={movie.results[0].title}
-              width={400}
-              height={100}
-              objectFit="cover"
-              className=" w-48 rounded-lg shadow h-24"
+              width={200}
+              height={200}
+              className="  rounded-lg shadow"
               priority
             />
 

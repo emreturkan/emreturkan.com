@@ -27,11 +27,11 @@ const GameActivity = async () => {
   const gameInfo = await getSteamStats(lastActivity.response.games[0].appid);
 
   const actived = await getSteamAchievement(
-    lastActivity.response.games[1].appid
+    lastActivity.response.games[0].appid
   );
 
   const gameAchievements = await getSteamAchievementDetails(
-    lastActivity.response.games[1].appid
+    lastActivity.response.games[0].appid
   );
 
   const activeAchievements = actived.playerstats.achievements.filter(
@@ -45,21 +45,24 @@ const GameActivity = async () => {
   );
 
   return (
-    <Card>
+    <Card className="border-none shadow-none">
       <CardContent>
         <div className="grid gap-4">
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+          <div className="flex flex-col md:flex-row items-start gap-4 md:gap-8">
             <Image
               src={capsule_image}
               alt={gameDetail?.name}
-              width={400}
-              height={100}
-              className=" w-48 rounded-lg shadow h-24"
+              width={200}
+              height={200}
+              className="  rounded-lg shadow "
               priority
             />
-            <p className="text-xs text-muted-foreground">
-              {gameDetail?.short_description}
-            </p>
+            <div className="grid gap-2">
+              <h3>{gameDetail?.name}</h3>
+              <p className="text-xs text-muted-foreground">
+                {gameDetail?.short_description}
+              </p>
+            </div>
           </div>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -79,6 +82,7 @@ const GameActivity = async () => {
                 </p>
               </div>
             </div>
+
             <Carousel
               className={cn("max-w-sm", {
                 "w-12": filteredAchievements.length === 1,
@@ -95,24 +99,22 @@ const GameActivity = async () => {
                       "basis-1/3 lg:basis-1/3": filteredAchievements.length > 2,
                     })}
                   >
-                    <div className="p-1">
-                      <TooltipProvider>
-                        <Tooltip>
-                          <TooltipTrigger>
-                            <Image
-                              key={achievement.name}
-                              src={achievement.icon}
-                              alt={achievement.name}
-                              width={20}
-                              height={20}
-                            />
-                          </TooltipTrigger>
-                          <TooltipContent className="absolute">
-                            {achievement.displayName}
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
-                    </div>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger>
+                          <Image
+                            key={achievement.name}
+                            src={achievement.icon}
+                            alt={achievement.name}
+                            width={20}
+                            height={20}
+                          />
+                        </TooltipTrigger>
+                        <TooltipContent className="text-xs ">
+                          {achievement.displayName}
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
                   </CarouselItem>
                 ))}
               </CarouselContent>

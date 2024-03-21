@@ -7,7 +7,7 @@ const PhotosStatistics = async () => {
     <div className="grid grid-cols-2 gap-4 md:px-16">
       <Card className=" p-1">
         <CardContent>
-          <h3 className="text-lg text-gray-300">Downloads</h3>
+          <h3 className="text-lg text-muted-foreground">Downloads</h3>
           <p className="text-xl font-semibold">
             {photosStatistics.downloads.total}
           </p>
@@ -15,7 +15,7 @@ const PhotosStatistics = async () => {
       </Card>
       <Card className=" p-1">
         <CardContent>
-          <h3 className="text-lg text-gray-300">Views</h3>
+          <h3 className="text-lg text-muted-foreground">Views</h3>
           <p className="text-xl font-semibold">
             {photosStatistics.views.total}
           </p>

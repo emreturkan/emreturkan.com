@@ -36,7 +36,7 @@ const PhotosImage = async () => {
             placeholder="blur"
             blurDataURL={blurredDataUrls[index]}
             loading="lazy"
-            className="rounded mb-4 max-w-sm"
+            className="rounded mb-4 "
           />
         </Link>
       ))}

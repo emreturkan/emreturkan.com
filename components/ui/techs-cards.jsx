@@ -45,7 +45,7 @@ const TechsCards = ({ title, techs }) => {
                               "bg-green-500": tech.level === "expert",
                             })}
                           ></div>
-                          <p className="text-xs font-light text-slate-500">
+                          <p className="text-xs font-medium text-background-foreground">
                             {toCapitalize(tech.level)}
                           </p>
                         </div>
