@@ -1,11 +1,10 @@
-"use client";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { ModeToggle } from "../ui/darkMode";
 import { Button } from "../ui/button";
 import { GithubIcon } from "lucide-react";
 import SiteNavs from "./site-navs";
-import { useState } from "react";
 import DrawerNavs from "./drawer-navs";
+import Link from "next/link";
 
 const SiteHeader = () => {
   const navLinks = [
@@ -13,31 +12,25 @@ const SiteHeader = () => {
     { id: 2, name: "Fotoğraflar", path: "/photos" },
     { id: 3, name: "Yer İmleri", path: "/bookmarks" },
     { id: 4, name: "Teknolojiler", path: "/techs" },
-    { id: 5, name: "Ekipmanlar", path: "/" },
+    { id: 5, name: "Ekipmanlar", path: "/equipments" },
   ];
-  let [activeTab, setActiveTab] = useState(navLinks[0].id);
+
   return (
     <header>
       <div className="flex items-center justify-between">
-        <Avatar>
-          <AvatarImage
-            src="https://i1.sndcdn.com/artworks-000578134589-jnit8m-t500x500.jpg"
-            alt="emreturkan.com avatar"
-          />
-          <AvatarFallback>ET</AvatarFallback>
-        </Avatar>
+        <Link href={"/"}>
+          <Avatar>
+            <AvatarImage
+              src="https://i1.sndcdn.com/artworks-000578134589-jnit8m-t500x500.jpg"
+              alt="emreturkan.com avatar"
+            />
+            <AvatarFallback>ET</AvatarFallback>
+          </Avatar>
+        </Link>
 
-        <SiteNavs
-          navLinks={navLinks}
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-        />
+        <SiteNavs navLinks={navLinks} />
         <div className="flex items-center gap-2">
-          <DrawerNavs
-            navLinks={navLinks}
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-          />
+          <DrawerNavs navLinks={navLinks} />
           <ModeToggle />
           <Button size="xs" variant="outline">
             <GithubIcon className="h-5 w-5" />

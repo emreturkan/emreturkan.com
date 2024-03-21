@@ -1,6 +1,7 @@
 export const siteConfig = {
   name: "Emre",
   lastName: "Turkan",
+  title: "Emre Turkan",
   description: "Personal website of Emre Turkan, built with Next.js.",
   url: "https://emreturkan.com",
   links: {
@@ -18,4 +19,5 @@ export const siteConfig = {
     "website",
   ],
   creator: "emreturkan",
+  creatorUrl: "https://emreturkan.com",
 };

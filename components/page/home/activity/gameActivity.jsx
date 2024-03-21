@@ -54,7 +54,6 @@ const GameActivity = async () => {
               alt={gameDetail?.name}
               width={400}
               height={100}
-              objectFit="cover"
               className=" w-48 rounded-lg shadow h-24"
               priority
             />

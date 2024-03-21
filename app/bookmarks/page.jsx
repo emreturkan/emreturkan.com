@@ -1,8 +1,24 @@
 import { Card, CardContent, CardDescription } from "@/components/ui/card";
+import { siteConfig } from "@/config/site";
 import { getBookmark } from "@/lib/actions/get-bookmark";
 import ConvertDate from "@/lib/date";
 import useTagIcon from "@/lib/useTagIcon";
 import React from "react";
+
+export const metadata = {
+  title: {
+    default: "Bookmarks | " + siteConfig.title,
+    template: "%s | " + siteConfig.title,
+  },
+  description: siteConfig.description,
+  keywords: siteConfig.keywords + ", bookmarks",
+  url: siteConfig.url + "/bookmarks",
+  author: {
+    name: siteConfig.creator,
+    url: siteConfig.url + "/bookmarks",
+  },
+  creator: siteConfig.creator,
+};
 
 const Bookmarks = async () => {
   const accessToken = await getAccessToken();

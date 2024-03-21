@@ -13,7 +13,7 @@ import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
 import SiteNavs from "./site-navs";
 
-const DrawerNavs = ({ navLinks, activeTab, setActiveTab }) => {
+const DrawerNavs = ({ navLinks }) => {
   return (
     <div className="md:hidden transition duration-300 ease-in-out">
       <Drawer>
@@ -27,12 +27,7 @@ const DrawerNavs = ({ navLinks, activeTab, setActiveTab }) => {
             <DrawerHeader>
               <DrawerTitle>Menu</DrawerTitle>
             </DrawerHeader>
-            <SiteNavs
-              drawer={true}
-              navLinks={navLinks}
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
+            <SiteNavs drawer={true} navLinks={navLinks} />
             <DrawerFooter>
               <DrawerClose asChild>
                 <Button variant="default">Close</Button>

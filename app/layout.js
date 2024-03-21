@@ -8,8 +8,8 @@ import { brandon } from "@/font/Brandon";
 
 export const metadata = {
   title: {
-    default: siteConfig.name + siteConfig.lastName,
-    template: "%s | " + siteConfig.name + siteConfig.lastName,
+    default: siteConfig.title,
+    template: "%s | " + siteConfig.title,
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
@@ -19,6 +19,7 @@ export const metadata = {
     url: siteConfig.url,
   },
   creator: siteConfig.creator,
+  metadataBase: new URL(siteConfig.creatorUrl),
 };
 
 export default function RootLayout({ children }) {
