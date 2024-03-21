@@ -6,7 +6,7 @@ import { getUnsplashPhotos } from "@/lib/actions/get-unsplash";
 const PhotosImage = async () => {
   const photos = await getUnsplashPhotos();
   return (
-    <div className="columns-1  gap-3 mt-4 sm:columns-2 lg:columns-2 rounded">
+    <div className="columns-1 gap-3 mt-4 sm:columns-2 lg:columns-2 rounded">
       {photos.map((photo) => (
         <Link
           href={photo.links.html}
@@ -22,7 +22,7 @@ const PhotosImage = async () => {
             placeholder="blur"
             blurDataURL={photo.urls.regular}
             loading="lazy"
-            className="rounded mb-4"
+            className="rounded mb-4 max-w-sm"
           />
         </Link>
       ))}
