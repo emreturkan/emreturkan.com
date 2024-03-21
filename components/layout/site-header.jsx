@@ -32,7 +32,7 @@ const SiteHeader = () => {
         <div className="flex items-center gap-2">
           <DrawerNavs navLinks={navLinks} />
           <ModeToggle />
-          <Button size="xs" variant="outline">
+          <Button size="xs" variant="outline" aria-label="Github">
             <GithubIcon className="h-5 w-5" />
           </Button>
         </div>

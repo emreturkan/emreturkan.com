@@ -24,12 +24,13 @@ const PhotosImage = async () => {
         <Link
           href={photo.links.html}
           key={photo.id}
+          aria-label={photo.alt_description || "Unsplash Emre Turkan Photo"}
           target="_blank"
           className="mb-4 p-0 rounded-lg cursor-pointer"
         >
           <Image
             src={photo.urls.regular}
-            alt={photo.description}
+            alt={photo.alt_description || "Unsplash Emre Turkan Photo"}
             width={500}
             height={500}
             placeholder="blur"
