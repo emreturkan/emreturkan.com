@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import SiteHeader from "@/components/layout/site-header";
 import { siteConfig } from "@/config/site";
 import { brandon } from "@/font/Brandon";
+import Script from "next/script";
 
 export const metadata = {
   title: {
@@ -26,6 +27,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={brandon.className}>
+        <Script
+          async
+          defer
+          src="https://eu.umami.is/script.js"
+          data-website-id={process.env.NEXT_PUBLIC_UMAMI_API_KEY}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
