@@ -58,7 +58,7 @@ export default Bookmarks;
 const getAccessToken = async () => {
   try {
     const response = await fetch(
-      "https://website-v2-brown.vercel.app/api",
+      "https://emreturkan.com/api",
       {
         method: "POST",
       },

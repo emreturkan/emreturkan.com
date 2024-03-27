@@ -29,8 +29,8 @@ const Welcome = () => {
         3D modellemeyi 🗿, fotoğraf çekmeyi 📸, oyun oynamayı 🎮 ve proje
         geliştirmeyi seviyorum.⌨ Son zamanlarda FPV Drone ile ilgileniyorum ve
         drone uçuruyorum.🚁
-        <br />
-        <br />
+      </p>
+      <p className="text-lg md:text-base  text-accent-foreground ">
         Şu an için boş vakitlerimde oyun geliştirme ile ilgileniyorum ve Unity
         öğreniyorum.🎮
       </p>
