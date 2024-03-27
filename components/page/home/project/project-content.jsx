@@ -38,8 +38,9 @@ const ProjectContent = async () => {
                 {project.name}
               </h1>
               <p className="text-sm font-normal text-muted-foreground">
-                {project.description ||
-                  "no descriptionno descriptionno descriptionno descriptionno descriptionno descriptionno description"}
+                {project.description
+                  ? `${project?.description?.slice(0, 110)}...`
+                  : "no descriptionno descriptionno descriptionno descriptionno descriptionno descriptionno description description..."}
               </p>
               <div className="flex items-center gap-2">
                 {LanguageIcon(project.language)}

@@ -7,7 +7,7 @@ async function ProjectTop() {
 
   return (
     <>
-      <h1 className="text-2xl">Projects</h1>
+      <h1 className="text-2xl">Projelerim</h1>
       <div className="flex items-center gap-2">
         <span className="flex h-2 w-2  rounded-full bg-green-500" />
         <GitCommit className="w-6 h-6" />
