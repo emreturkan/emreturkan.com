@@ -31,7 +31,7 @@ const Bookmarks = async () => {
         <Card key={bookmark._id} className="text-white border-none shadow-none">
           {bookmark && (
             <CardContent>
-              <div className="w-full   p-4 pt-0 grid gap-2">
+              <div className="w-full   pb-4 pt-0 grid gap-2">
                 <Link href={bookmark.link} target="_blank">
                   <h3 className="text-secondary-foreground text-base font-semibold hover:text-blue-600 transition duration-300 ease-in-out ">
                     {bookmark.title}

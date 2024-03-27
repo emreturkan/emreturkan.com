@@ -17,7 +17,7 @@ const MovieActivity = async () => {
       <CardContent>
         <div className="grid gap-2">
           <div className="flex flex-row items-start gap-4 ">
-            <div className="relative w-64 h-36 sm:w-40 sm:h-36">
+            <div className="relative w-full h-36 sm:w-40 sm:h-36">
               <Image
                 src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.results[0]?.poster_path}`}
                 alt={movie.results[0].title}

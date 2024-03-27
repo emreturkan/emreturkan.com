@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { getUnsplashPhotosStatistics } from "@/lib/actions/get-unsplash";
 
 const PhotosStatistics = async () => {
@@ -12,6 +13,7 @@ const PhotosStatistics = async () => {
             {photosStatistics.downloads.total}
           </p>
         </CardContent>
+        <Separator />
       </Card>
       <Card className=" p-1">
         <CardContent>
@@ -20,6 +22,7 @@ const PhotosStatistics = async () => {
             {photosStatistics.views.total}
           </p>
         </CardContent>
+        <Separator />
       </Card>
     </div>
   );
