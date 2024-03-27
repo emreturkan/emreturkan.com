@@ -4,3 +4,6 @@ export { default as TextIcon } from "./text-icon";
 export { default as GithubIcon } from "./github-icon";
 export { default as WebsiteIcon } from "./website-icon";
 export { default as NpmIcon } from "./npm-icon";
+export { default as JavascriptIcon } from "./javascript-icon";
+export { default as TypescriptIcon } from "./typescript-icon";
+export { default as PythonIcon } from "./python-icon";

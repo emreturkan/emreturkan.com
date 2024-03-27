@@ -5,13 +5,13 @@ import Image from "next/image";
 import { cn, toCapitalize } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { container, items } from "@/lib/animation";
+import { Separator } from "./separator";
 const TechsCards = ({ title, techs }) => {
   return (
     <div className="w-full">
       <div>
-        <h2 className="text-lg font-semibold  border-b">
-          {toCapitalize(title)}
-        </h2>
+        <h2 className="text-lg font-semibold">{toCapitalize(title)}</h2>
+        <Separator />
       </div>
       <motion.div
         variants={container}
@@ -22,11 +22,8 @@ const TechsCards = ({ title, techs }) => {
         {techs.map(
           (tech) =>
             tech.header === title && (
-              <motion.div variants={items}>
-                <Card
-                  key={tech.id}
-                  className="flex items-center justify-between "
-                >
+              <motion.div key={tech.id} variants={items}>
+                <Card className="flex items-center justify-between ">
                   <CardContent>
                     <div className="flex items-center gap-4">
                       <Image
