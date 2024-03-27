@@ -32,7 +32,7 @@ const ProjectContent = async () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {topProjects.map((project) => (
         <Link key={project.id} href={project.html_url}>
-          <Card className="group">
+          <Card className="group h-full grid">
             <CardContent className="grid gap-1">
               <h1 className="text-xl font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-color duration-300 ease-in-out">
                 {project.name}
