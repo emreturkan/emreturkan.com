@@ -8,11 +8,11 @@ import Link from "next/link";
 
 const SiteHeader = () => {
   const navLinks = [
-    { id: 1, name: "Ana Sayfa", path: "/" },
-    { id: 2, name: "Fotoğraflar", path: "/photos" },
-    { id: 3, name: "Yer İmleri", path: "/bookmarks" },
-    { id: 4, name: "Teknolojiler", path: "/techs" },
-    { id: 5, name: "Ekipmanlar", path: "/equipments" },
+    { id: 1, name: "Home", path: "/" },
+    { id: 2, name: "Photos", path: "/photos" },
+    { id: 3, name: "Bookmarks", path: "/bookmarks" },
+    { id: 4, name: "Technology", path: "/techs" },
+    { id: 5, name: "Guestbook", path: "/guestbook" },
   ];
 
   return (

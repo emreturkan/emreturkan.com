@@ -26,12 +26,12 @@ const Bookmarks = async () => {
   const getBookmarks = await getBookmark(accessToken?.access_token);
 
   return (
-    <div className="w-full h-screen grid grid-cols-1  ">
+    <div className="w-full h-screen grid grid-cols-1   ">
       {getBookmarks?.items?.map((bookmark) => (
         <Card key={bookmark._id} className="text-white border-none shadow-none">
           {bookmark && (
             <CardContent>
-              <div className="w-full   pb-4 pt-0 grid gap-2">
+              <div className="w-full   py-4 grid gap-2">
                 <Link href={bookmark.link} target="_blank">
                   <h3 className="text-secondary-foreground text-base font-semibold hover:text-blue-600 transition duration-300 ease-in-out ">
                     {bookmark.title}

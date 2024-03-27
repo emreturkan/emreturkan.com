@@ -48,21 +48,21 @@ const GameActivity = async () => {
     <Card className="border-none shadow-none">
       <CardContent>
         <div className="grid gap-4">
-          <div className="flex flex-row items-start gap-4">
-            <div className="relative w-full h-24 sm:w-52 sm:h-36">
+          <div className="grid grid-cols-12 md:gap-4 ">
+            <div className="relative md:col-span-2 md:w-full md:h-32">
               <Image
                 src={gameImage}
                 alt={gameDetail?.name}
                 fill
-                className="rounded shadow "
+                className="rounded shadow object-cover object-top"
                 priority
               />
             </div>
 
-            <div className="grid h-full gap-2">
-              <div>
+            <div className="grid h-full col-span-12 md:col-span-10 gap-2">
+              <div className="grid">
                 <h3>{gameDetail?.name}</h3>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground w-9/12">
                   {gameDetail?.short_description}
                 </p>
               </div>

@@ -15,9 +15,9 @@ const MovieActivity = async () => {
   return (
     <Card className="border-none shadow-none">
       <CardContent>
-        <div className="grid gap-2">
-          <div className="flex flex-row items-start gap-4 ">
-            <div className="relative w-full h-36 sm:w-40 sm:h-36">
+        <div className="grid gap-4">
+          <div className="grid grid-cols-12 md:gap-4 ">
+            <div className="relative md:col-span-2 md:w-full md:h-32">
               <Image
                 src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.results[0]?.poster_path}`}
                 alt={movie.results[0].title}
@@ -27,10 +27,10 @@ const MovieActivity = async () => {
               />
             </div>
 
-            <div className="grid h-full gap-4 ">
-              <div>
+            <div className="grid h-full col-span-12 md:col-span-10 gap-4 ">
+              <div className="grid">
                 <h1>{movie.results[0].title}</h1>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground w-9/12">
                   {movie.results[0].overview}
                 </p>
               </div>
@@ -46,7 +46,7 @@ const MovieActivity = async () => {
                       </div>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>TMDB Puanı</p>
+                      <p>TMDB Rating</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -60,7 +60,7 @@ const MovieActivity = async () => {
                       </div>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>Kendi Puanım</p>
+                      <p>My Rating</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
