@@ -2,74 +2,77 @@ import { Card, CardContent } from "@/components/ui/card";
 import React from "react";
 import Image from "next/image";
 import { getMovie } from "@/lib/actions/get-movie";
-import { Star, MessageCircleHeart } from "lucide-react";
+import { Star, MessageCircleHeart, ArrowUpRight } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Link from "next/link";
 const MovieActivity = async () => {
   const movie = await getMovie();
 
   return (
-    <Card className="border-none shadow-none">
-      <CardContent>
-        <div className="grid gap-4">
-          <div className="grid grid-cols-12 md:gap-4 ">
-            <div className="relative md:col-span-2 md:w-full md:h-32">
-              <Image
-                src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.results[0]?.poster_path}`}
-                alt={movie.results[0].title}
-                fill
-                className="rounded-lg shadow"
-                priority
-              />
-            </div>
+    <Link
+      href="https://www.themoviedb.org/u/emreturkan/ratings"
+      target="_blank"
+      className="group"
+    >
+      <Card className="border flex items-center justify-between rounded shadow-sm">
+        <CardContent className="flex items-center gap-2 justify-start  ">
+          <Image
+            src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.results[0]?.poster_path}`}
+            alt={movie.results[0].title}
+            width={40}
+            height={100}
+            className="rounded-lg shadow"
+            priority
+          />
 
-            <div className="grid h-full col-span-12 md:col-span-10 gap-4 ">
-              <div className="grid">
-                <h1>{movie.results[0].title}</h1>
-                <p className="text-xs text-muted-foreground w-9/12">
-                  {movie.results[0].overview}
-                </p>
-              </div>
-              <div className="flex items-end justify-start gap-4">
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <div className="flex items-center gap-1">
-                        <Star className="w-5 h-5 text-yellow-400" />
-                        <p className="text-sm">
-                          {movie.results[0].vote_average.toFixed(1)}
-                        </p>
-                      </div>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>TMDB Rating</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+          <div className="grid gap-1 px-4 py-2">
+            <h3 className="text-sm md:text-lg text-primary">
+              {movie.results[0].title}
+            </h3>
 
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <div className="flex items-center gap-1">
-                        <MessageCircleHeart className="w-5 h-5 text-red-400" />
-                        <p className="text-sm">{movie.results[0].rating} </p>
-                      </div>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>My Rating</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </div>
+            <div className="flex items-end justify-start gap-4 ">
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <div className="flex items-center gap-1">
+                      <Star className="w-3 h-3 text-yellow-400" />
+                      <p className="text-sm">
+                        {movie.results[0].vote_average.toFixed(1)}
+                      </p>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>TMDB Rating</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <div className="flex items-center gap-1">
+                      <MessageCircleHeart className="w-3 h-3 text-red-400" />
+                      <p className="text-sm">{movie.results[0].rating} </p>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>My Rating</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </div>
           </div>
+        </CardContent>
+        <div className="p-4">
+          <ArrowUpRight className="group-hover:text-blue-600 transition duration-300 ease-in-out" />
         </div>
-      </CardContent>
-    </Card>
+      </Card>
+    </Link>
   );
 };
 

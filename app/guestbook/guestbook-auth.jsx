@@ -27,12 +27,12 @@ const GuestbookAuth = () => {
             type="text"
             size="sm"
             placeholder="Your Message"
-            className="bg-card rounded-md"
+            className="bg-card rounded"
             onChange={(e) => setMessage(e.target.value)}
             value={message}
           />
           <Button
-            className="rounded-md"
+            className="rounded"
             size="sm"
             type="submit"
             onClick={handleSubmit}

@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Code, Clock, Star } from "lucide-react";
 import { format } from "date-fns";
 import { JavascriptIcon, PythonIcon, TypescriptIcon } from "@/assets/icons";
-import { Separator } from "@/components/ui/separator";
 
 const ProjectContent = async () => {
   const projects = await getProject();
@@ -18,13 +17,13 @@ const ProjectContent = async () => {
   const LanguageIcon = (language) => {
     switch (language) {
       case "JavaScript":
-        return <JavascriptIcon className="w-4 h-4" />;
+        return <JavascriptIcon className="w-3 h-3" />;
       case "TypeScript":
-        return <TypescriptIcon className="w-4 h-4" />;
+        return <TypescriptIcon className="w-3 h-3" />;
       case "Python":
-        return <PythonIcon className="w-4 h-4" />;
+        return <PythonIcon className="w-3 h-3" />;
       default:
-        return <Code className="w-4 h-4" />;
+        return <Code className="w-3 h-3" />;
     }
   };
 
@@ -32,24 +31,24 @@ const ProjectContent = async () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {topProjects.map((project) => (
         <Link key={project.id} href={project.html_url}>
-          <Card className="group h-full grid">
+          <Card className="group h-full grid px-4 gap-2 border shadow-sm rounded py-2">
             <CardContent className="grid gap-1">
-              <h1 className="text-xl font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-color duration-300 ease-in-out">
+              <h1 className="text-lg font-semibold text-primary group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-color duration-300 ease-in-out">
                 {project.name}
               </h1>
-              <p className="text-sm font-normal text-muted-foreground">
+              <p className="text-xs font-light text-muted-foreground">
                 {project.description
                   ? `${project?.description?.slice(0, 110)}...`
                   : "no descriptionno descriptionno descriptionno descriptionno descriptionno descriptionno description description..."}
               </p>
               <div className="flex items-center gap-2">
                 {LanguageIcon(project.language)}
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xs text-muted-foreground">
                   {project.language}
                 </p>
               </div>
             </CardContent>
-            <CardFooter className="flex items-center justify-between gap-1 px-2">
+            <CardFooter className="flex items-center justify-between gap-1">
               <div className="flex items-center gap-1">
                 <Clock className="w-3 h-3" />
                 <p className="text-xs">
@@ -58,13 +57,12 @@ const ProjectContent = async () => {
               </div>
               <div className="flex items-center gap-1">
                 <Star className="w-3 h-3 fill-amber-400 stroke-amber-400" />
-                <p className="text-sm font-medium">
+                <p className="text-xs font-medium">
                   {project.stargazers_count}
                 </p>
               </div>
             </CardFooter>
           </Card>
-          <Separator />
         </Link>
       ))}
     </div>

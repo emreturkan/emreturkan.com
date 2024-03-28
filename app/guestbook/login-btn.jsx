@@ -10,7 +10,7 @@ export default function LoginBtn() {
       <Button
         size="sm"
         variant="destructive"
-        className="rounded-md shadow-sm "
+        className="rounded shadow-sm "
         onClick={() => signOut()}
       >
         Sign out
@@ -21,7 +21,7 @@ export default function LoginBtn() {
     <>
       <Button
         size="sm"
-        className="rounded-md shadow-sm "
+        className="rounded  shadow-sm "
         onClick={() => signIn("github")}
       >
         <Github className="w-4 h-4" />

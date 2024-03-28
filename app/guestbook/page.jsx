@@ -31,7 +31,6 @@ const GuestBook = async () => {
                   </div>
                 </CardContent>
               </Card>
-              <Separator className="my-0 w-full max-w-sm" />
             </div>
           ))}
       </div>

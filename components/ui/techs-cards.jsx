@@ -23,7 +23,7 @@ const TechsCards = ({ title, techs }) => {
           (tech) =>
             tech.header === title && (
               <motion.div key={tech.id} variants={items}>
-                <Card className="flex items-center justify-between ">
+                <Card className="flex items-center border rounded shadow-sm px-2 py-1 justify-between ">
                   <CardContent>
                     <div className="flex items-center gap-4">
                       <Image

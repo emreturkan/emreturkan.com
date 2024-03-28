@@ -11,22 +11,14 @@ const Loading = () => {
   </div>;
 
   return (
-    <Card>
-      <CardContent>
-        <div className="grid gap-4">
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 ">
-            <Skeleton className=" w-[200px] h-[100px]" />
+    <Card className="border flex items-center justify-between rounded shadow-sm">
+      <CardContent className="flex items-center  justify-start  ">
+        <Skeleton className="h-16 w-12 rounded-lg" />
 
-            <Skeleton className=" w-[450px] h-[100px]" />
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-1">
-              <Skeleton className="h-4 w-[130px]" />
-            </div>
-            <div className="flex items-center gap-1">
-              <Skeleton className="h-4 w-[130px]" />
-            </div>
-          </div>
+        <div className="grid gap-2 px-4 py-2">
+          <Skeleton className="h-4 w-48" />
+
+          <Skeleton className="h-4 w-96" />
         </div>
       </CardContent>
     </Card>

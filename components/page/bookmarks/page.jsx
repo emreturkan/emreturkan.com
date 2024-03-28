@@ -10,7 +10,7 @@ const BookmarksPage = async () => {
   return (
     <div className="grid grid-cols-1 gap-4  ">
       {getBookmarks?.items?.map((bookmark) => (
-        <Card key={bookmark._id} className="shadow-md p-4 py-2 rounded ">
+        <Card key={bookmark._id} className="shadow-md border p-4 py-2 rounded ">
           {bookmark && (
             <CardContent>
               <div className="py-4 grid gap-2">
