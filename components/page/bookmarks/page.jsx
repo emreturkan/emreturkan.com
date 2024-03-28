@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getBookmark } from "@/lib/actions/get-bookmark";
 import ConvertDate from "@/lib/date";
 import useTagIcon from "@/lib/useTagIcon";
+import { Dot } from "lucide-react";
 const BookmarksPage = async () => {
   const accessToken = await getAccessToken();
   const getBookmarks = await getBookmark(accessToken?.access_token);
@@ -21,11 +22,14 @@ const BookmarksPage = async () => {
                 <CardDescription className="text-xs">
                   {bookmark.excerpt}
                 </CardDescription>
-                <div className="flex text-secondary-foreground items-center gap-2">
+                <div className="flex gap-2  text-secondary-foreground items-center ">
                   {useTagIcon(bookmark.tags[0])}
-                  <div className="text-xs md:text-sm">{bookmark.domain} ·</div>
-                  <div className="text-xs md-text-sm">
-                    {ConvertDate(bookmark.created)}
+                  <div className="flex flex-wrap items-center">
+                    <div className="text-xs md:text-sm">{bookmark.domain}</div>{" "}
+                    <Dot />
+                    <div className="text-xs md-text-sm">
+                      {ConvertDate(bookmark.created)}
+                    </div>
                   </div>
                 </div>
               </div>
