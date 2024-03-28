@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
           async
           defer
           src="https://eu.umami.is/script.js"
-          data-website-id={process.env.NEXT_PUBLIC_UMAMI_API_KEY}
+          data-website-id={process.env.UMAMI_API_KEY}
         />
         <NextAuthSessionProvider>
           <ThemeProvider

@@ -8,9 +8,9 @@ export async function POST() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        client_id: process.env.NEXT_PUBLIC_RAINDROP_CLIENT_ID,
-        refresh_token: process.env.NEXT_PUBLIC_RAINDROP_REFRESH_TOKEN,
-        client_secret: process.env.NEXT_PUBLIC_RAINDROP_CLIENT_SECRET,
+        client_id: process.env.RAINDROP_CLIENT_ID,
+        refresh_token: process.env.RAINDROP_REFRESH_TOKEN,
+        client_secret: process.env.RAINDROP_CLIENT_SECRET,
         grant_type: "refresh_token",
       }),
     });
