@@ -1,14 +1,12 @@
 import "./globals.css";
-import { ThemeProvider } from "@/components/provider/nextThemeProvider";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import SiteHeader from "@/components/layout/site-header";
-import { siteConfig } from "@/config/site";
-import { brandon } from "@/font/Brandon";
+import { ThemeProvider } from "@/components/provider/next-theme-provider";
+import NextAuthSessionProvider from "@/components/provider/session-provider";
 import Script from "next/script";
-import { SessionProvider } from "next-auth/react";
-import NextAuthSessionProvider from "./session-provider";
-
+import SiteHeader from "@/components/layout/site-header";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
+import { GeistSans } from "geist/font/sans";
+import { siteConfig } from "@/config/site";
 export const metadata = {
   title: {
     default: siteConfig.title,
@@ -28,7 +26,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={brandon.className}>
+      <body className={GeistSans.className}>
         <Script
           async
           defer
