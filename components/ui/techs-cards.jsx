@@ -6,6 +6,7 @@ import { cn, toCapitalize } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { container, items } from "@/lib/animation";
 import { Separator } from "./separator";
+
 const TechsCards = ({ title, techs }) => {
   return (
     <div className="w-full">
@@ -54,6 +55,7 @@ const TechsCards = ({ title, techs }) => {
             )
         )}
       </motion.div>
+      {/* <MyGraph /> */}
     </div>
   );
 };
