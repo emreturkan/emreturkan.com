@@ -41,7 +41,7 @@ const ProjectContent = async () => {
                   ? `${project?.description?.slice(0, 110)}...`
                   : "no descriptionno descriptionno descriptionno descriptionno descriptionno descriptionno description description..."}
               </p>
-              <div className="flex items-center justify-between ">
+              <div className="flex items-center gap-2 ">
                 <div className="flex items-center gap-1">
                   {LanguageIcon(project.language)}
                   <p className="text-xs text-muted-foreground">
@@ -49,8 +49,8 @@ const ProjectContent = async () => {
                   </p>
                 </div>
                 <div className="flex items-center gap-1">
-                  <Star className="w-3 h-3 fill-amber-400 stroke-amber-400" />
-                  <p className="text-xs font-medium">
+                  <Star className="w-3 h-3 fill-muted-foreground stroke-muted-foreground" />
+                  <p className="text-sm text-muted-foreground font-medium">
                     {project.stargazers_count}
                   </p>
                 </div>

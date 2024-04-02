@@ -2,10 +2,10 @@
 
 import { useSession } from "next-auth/react";
 import React, { useState } from "react";
-import LoginBtn from "@/app/guestbook/login-btn";
 import { addGuestbook } from "@/lib/actions/supabase-guestbook";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import LoginBtn from "@/components/ui/login-btn";
 import confetti from "canvas-confetti";
 const GuestbookAuth = () => {
   const { data: session } = useSession();

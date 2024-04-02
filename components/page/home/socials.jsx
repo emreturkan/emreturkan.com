@@ -1,43 +1,49 @@
 import { Button } from "@/components/ui/button";
-import React from "react";
-import { Mail, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
-import { X } from "lucide-react";
+import { Mail, Github, Linkedin, ExternalLink, X } from "lucide-react";
+
 const Socials = () => {
   const socials = [
     {
+      name: "Email",
+      icon: <Mail size={16} />,
+      link: "mailto:emreturkan10@gmail.com",
+    },
+    {
       name: "Github",
-      icon: <Github />,
+      icon: <Github size={16} />,
       link: "https://github.com/emreturkan",
     },
     {
       name: "Linkedin",
-      icon: <Linkedin />,
+      icon: <Linkedin size={16} />,
       link: "https://www.linkedin.com/in/emreturkan/",
     },
     {
       name: "Twitter",
-      icon: <X />,
+      icon: <X size={16} />,
       link: "https://twitter.com/_emreturkan",
     },
   ];
   return (
-    <div className="flex gap-2">
-      <Link href={"mailto:emreturkan10@gmail.com"}>
-        <Button variant="secondary" aria-label="Contact me">
-          {" "}
-          <Mail className="mr-2 h-4 w-4" /> Contact me
-        </Button>
-      </Link>
+    <div className="grid w-full grid-cols-1 md:grid-cols-4 gap-2">
       {socials.map((social) => (
         <Link
+          className="w-full"
           href={social.link}
-          key={social.name}
           target="_blank"
-          aria-label={social.name}
+          key={social.name}
         >
-          <Button variant="ghost" className="p-2 " aria-label={social.name}>
-            {social.icon}
+          <Button
+            variant="outline"
+            className="py-6 flex w-full items-center justify-between gap-2"
+            aria-label={social.name}
+          >
+            <div className="flex items-center gap-2">
+              <span>{social.icon}</span>
+              <span className="text-sm ">{social.name}</span>
+            </div>
+            <ExternalLink className="w-4 h-4" />
           </Button>
         </Link>
       ))}

@@ -5,7 +5,7 @@ import Loading from "./activity/loading";
 
 const Activity = async () => {
   return (
-    <div className="mt-8 grid gap-4">
+    <div className="mt-8 grid md:grid-cols-2 gap-4">
       <Suspense fallback={<Loading />}>
         <GameActivity />
       </Suspense>
