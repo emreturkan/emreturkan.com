@@ -26,7 +26,7 @@ const Socials = () => {
     },
   ];
   return (
-    <div className="grid w-full grid-cols-1 md:grid-cols-4 gap-2">
+    <div className="grid mt-2 w-full grid-cols-1 md:grid-cols-4 gap-2">
       {socials.map((social) => (
         <Link
           className="w-full"

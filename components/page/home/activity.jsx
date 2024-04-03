@@ -1,5 +1,5 @@
-import GameActivity from "./activity/gameActivity";
-import MovieActivity from "./activity/movieActivity";
+import GameActivity from "./activity/game-activity";
+import MovieActivity from "./activity/movie-activity";
 import { Suspense } from "react";
 import Loading from "./activity/loading";
 

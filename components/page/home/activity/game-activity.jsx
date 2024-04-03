@@ -1,6 +1,7 @@
 import {
   getGameActivity,
   getGameDetails,
+  getSteamAchievement,
   getSteamStats,
 } from "@/lib/actions/get-steam";
 import Image from "next/image";
@@ -14,6 +15,14 @@ const GameActivity = async () => {
   const gameDetail = await getGameDetails(lastActivity.response.games[0].appid);
   const gameImage = `https://steamcdn-a.akamaihd.net/steam/apps/${lastActivity.response.games[0].appid}/library_600x900_2x.jpg`;
   const gameInfo = await getSteamStats(lastActivity.response.games[0].appid);
+
+  const actived = await getSteamAchievement(
+    lastActivity.response.games[0].appid
+  );
+
+  const activeAchievements = actived.playerstats.achievements.filter(
+    (i) => i.achieved === 1
+  );
 
   return (
     <Link
@@ -48,9 +57,7 @@ const GameActivity = async () => {
                 </div>
                 <div className="flex items-center gap-1">
                   <Trophy className="w-3 h-3 text-sky-500" />
-                  <p className="text-xs">
-                    {gameInfo?.playerstats.achievements[0].achieved}{" "}
-                  </p>
+                  <p className="text-xs">{activeAchievements?.length} </p>
                 </div>
               </div>
             </div>

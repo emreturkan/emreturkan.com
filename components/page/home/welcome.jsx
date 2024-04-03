@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Welcome = () => {
   return (
-    <div className="flex flex-col items-start justify-center mt-0 md:mt-4 gap-2">
+    <div className="flex flex-col items-start justify-center mt-0  gap-2">
       <h1 className="text-lg font-medium text-accent-foreground tracking-wide mb-1 md:mb-2 flex items-center justify-center">
         Hi, I'm Emre
         <span className="inline-block origin-[70%_70%] animate-wave">👋🏼</span>
