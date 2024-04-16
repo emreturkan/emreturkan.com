@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap --config next-sitemap.config.js --sitemap-xml",
+    "sitemap": "next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint"
   },
@@ -29,8 +31,9 @@
     "framer-motion": "^11.0.12",
     "geist": "^1.3.0",
     "lucide-react": "^0.334.0",
-    "next": "14.1.0",
+    "next": "14.2.1",
     "next-auth": "^4.24.7",
+    "next-sitemap": "^4.2.3",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",

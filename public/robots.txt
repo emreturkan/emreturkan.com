@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://emreturkan.com
+
+# Sitemaps
+Sitemap: https://emreturkan.com/sitemap.xml
