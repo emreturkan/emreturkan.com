@@ -1,9 +1,9 @@
 {
-  "name": "website",
+  "name": "emreturkan",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
     "postbuild": "next-sitemap --config next-sitemap.config.js --sitemap-xml",
     "sitemap": "next-sitemap --config next-sitemap.config.js",
@@ -35,6 +35,7 @@
     "next-auth": "^4.24.7",
     "next-sitemap": "^4.2.3",
     "next-themes": "^0.2.1",
+    "node-cron": "^3.0.3",
     "react": "^18",
     "react-dom": "^18",
     "react-force-graph": "^1.44.3",

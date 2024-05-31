@@ -4,31 +4,33 @@ import { getBookmark } from "@/lib/actions/get-bookmark";
 import ConvertDate from "@/lib/date";
 import useTagIcon from "@/lib/useTagIcon";
 import { Dot } from "lucide-react";
+import cron from "node-cron";
+
 const BookmarksPage = async () => {
   const accessToken = await getAccessToken();
   const getBookmarks = await getBookmark(accessToken?.access_token);
 
   return (
-    <div className="grid grid-cols-1 gap-4   ">
+    <div className="grid grid-cols-1 gap-4">
       {getBookmarks?.items?.map((bookmark) => (
-        <Card key={bookmark._id} className="shadow-md border p-4 py-2 rounded ">
+        <Card key={bookmark._id} className="shadow-md border p-4 py-2 rounded">
           {bookmark && (
             <CardContent>
               <div className="py-4 grid gap-2">
                 <Link href={bookmark.link} target="_blank">
-                  <h3 className="text-primary text-sm md:text-base font-semibold hover:text-blue-600 transition duration-300 ease-in-out ">
+                  <h3 className="text-primary text-sm md:text-base font-semibold hover:text-blue-600 transition duration-300 ease-in-out">
                     {bookmark.title}
                   </h3>
                 </Link>
                 <CardDescription className="text-xs">
                   {bookmark.excerpt}
                 </CardDescription>
-                <div className="flex gap-2  text-secondary-foreground items-center ">
+                <div className="flex gap-2 text-secondary-foreground items-center">
                   {useTagIcon(bookmark.tags[0])}
                   <div className="flex flex-wrap items-center">
                     <div className="text-xs md:text-sm">{bookmark.domain}</div>{" "}
                     <Dot />
-                    <div className="text-xs md-text-sm">
+                    <div className="text-xs md:text-sm">
                       {ConvertDate(bookmark.created)}
                     </div>
                   </div>
@@ -69,3 +71,13 @@ const getAccessToken = async () => {
     console.error(err);
   }
 };
+
+// Initialize the cron job server-side
+if (typeof window === "undefined") {
+  cron.schedule("0 0 */10 * *", async () => {
+    await getAccessToken();
+    console.log("Access token refreshed");
+  });
+
+  console.log("Cron jobs initialized");
+}
