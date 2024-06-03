@@ -12,10 +12,18 @@ app.prepare().then(() => {
     const parsedUrl = parse(req.url, true);
     handle(req, res, parsedUrl);
   }).listen(3000, (err) => {
-    if (err) throw err;
+    if (err) {
+      console.error("Error starting server:", err);
+      process.exit(1);
+    }
     console.log("> Ready on http://localhost:3000");
   });
 
   // Initialize cron jobs
-  initCronJobs();
+  try {
+    initCronJobs();
+    console.log("Cron jobs initialized.");
+  } catch (err) {
+    console.error("Error initializing cron jobs:", err);
+  }
 });

@@ -1,0 +1,9 @@
+{
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@vercel/next"
+    }
+  ],
+  "rewrites": [{ "source": "/api/initCron", "destination": "/api/initCron.js" }]
+}
