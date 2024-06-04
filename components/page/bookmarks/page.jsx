@@ -8,6 +8,7 @@ import cron from "node-cron";
 
 const BookmarksPage = async () => {
   const accessToken = await getAccessToken();
+
   const getBookmarks = await getBookmark(accessToken?.access_token);
 
   return (
@@ -48,17 +49,12 @@ export default BookmarksPage;
 
 const getAccessToken = async () => {
   try {
-    const response = await fetch(
-      "http://emreturkan.com/api",
-      {
-        method: "POST",
+    const response = await fetch("https://emreturkan.com/api", {
+      method: "POST",
+      next: {
+        revalidate: 3600,
       },
-      {
-        next: {
-          revalidate: 3600,
-        },
-      }
-    );
+    });
 
     if (!response.ok) {
       throw new Error("Failed to refresh token");
@@ -71,13 +67,3 @@ const getAccessToken = async () => {
     console.error(err);
   }
 };
-
-// Initialize the cron job server-side
-if (typeof window === "undefined") {
-  cron.schedule("0 0 */10 * *", async () => {
-    await getAccessToken();
-    console.log("Access token refreshed");
-  });
-
-  console.log("Cron jobs initialized");
-}
