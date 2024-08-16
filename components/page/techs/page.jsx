@@ -6,10 +6,13 @@ const Techs = async () => {
   const categories = [
     "languages",
     "frontend",
+    "backend",
+    "mobile",
     "ui",
     "service",
     "store",
     "utils",
+    "game",
   ];
   return (
     <div className="grid gap-4">
