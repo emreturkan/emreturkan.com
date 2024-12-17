@@ -92,6 +92,9 @@ dependencies:
   react-number-format:
     specifier: ^5.4.2
     version: 5.4.2(react-dom@18.3.1)(react@18.3.1)
+  react-snowfall:
+    specifier: ^2.2.0
+    version: 2.2.0(react-dom@18.3.1)(react@18.3.1)
   sharp:
     specifier: ^0.33.5
     version: 0.33.5
@@ -2696,6 +2699,10 @@ packages:
       scheduler: 0.23.2
     dev: false
 
+  /react-fast-compare@3.2.2:
+    resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
+    dev: false
+
   /react-force-graph@1.45.4(react@18.3.1)(three@0.170.0):
     resolution: {integrity: sha512-Mppx8pU2TjJm+NToLDpcBR/8zk/aXbhFvP2r8Mw1pdQXnScpVVVb/7rfvZObSvnE9R2RoEjBpr4Ily4thO/Pfw==}
     engines: {node: '>=12'}
@@ -2769,6 +2776,17 @@ packages:
       tslib: 2.8.1
       use-callback-ref: 1.3.2(react@18.3.1)
       use-sidecar: 1.1.3(react@18.3.1)
+    dev: false
+
+  /react-snowfall@2.2.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-dRk7vEHq/ZUOG+JHk2k/hH3HmliOWGXr4rKRDeW4mjWuHeI1r5h0Lc1r2jnTtUS1im702d6tCmNGymlNTdhXYg==}
+    peerDependencies:
+      react: "^16.8 ||\_17.x || 18.x"
+      react-dom: ^16.8 || 17.x || 18.x
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-fast-compare: 3.2.2
     dev: false
 
   /react-style-singleton@2.2.3(react@18.3.1):
