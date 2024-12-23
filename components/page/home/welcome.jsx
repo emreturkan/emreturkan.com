@@ -12,7 +12,7 @@ const Welcome = () => {
         {""}
         <Link
           target="_blank"
-          className=" text-sky-500 hover:text-blue-400 transition duration-300 ease-in-out"
+          className=" decoration-sky-500 underline decoration-wavy transition duration-300 ease-in-out"
           href="https://entererp.com"
         >
           EnterERP

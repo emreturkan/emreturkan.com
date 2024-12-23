@@ -13,7 +13,7 @@ import { getMovieList } from "@/lib/actions/get-movie-list";
 
 const WatchlistActivity = async () => {
   const getList = await getMovieList();
-  const filteredList = getList.items.slice(0, 5);
+  const filteredList = getList.items.slice(0, 3);
 
   return (
     <div className="grid gap-2">
