@@ -22,7 +22,8 @@ const GameActivity = async () => {
         lastActivity.response.games[0].appid
     );
 
-    const activeAchievements = actived.playerstats.achievements.filter(
+
+    const activeAchievements = actived.playerstats.achievements?.filter(
         i => i.achieved === 1
     );
 
@@ -32,7 +33,7 @@ const GameActivity = async () => {
             target="_blank"
             className="group"
         >
-            <Card className="flex items-center justify-between rounded border shadow-sm">
+            <Card className="flex items-center h-16 justify-between rounded border shadow-sm">
                 <CardContent className="flex items-center justify-start gap-2  ">
                     <Image
                         src={gameImage}

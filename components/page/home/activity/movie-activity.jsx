@@ -20,7 +20,7 @@ const MovieActivity = async () => {
       target="_blank"
       className="group"
     >
-      <Card className="border flex items-center justify-between rounded shadow-sm">
+      <Card className="border flex h-16 items-center justify-between rounded shadow-sm">
         <CardContent className="flex items-center gap-2 justify-start  ">
           <Image
             src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.results[0]?.poster_path}`}

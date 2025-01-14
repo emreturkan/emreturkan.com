@@ -25,7 +25,7 @@ const WatchlistActivity = async () => {
           className="group"
           key={movie.id}
         >
-          <Card className="border flex items-center justify-between rounded shadow-sm">
+          <Card className="border flex items-center h-16 justify-between rounded shadow-sm">
             <CardContent className="flex items-center gap-2 justify-start  ">
               <Image
                 src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie?.poster_path}`}
