@@ -7,7 +7,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { GeistSans } from "geist/font/sans";
 import { siteConfig } from "@/config/site";
-import SnowfallItem from "@/components/ui/snow-fall";
 export const metadata = {
   title: {
     default: siteConfig.title,
@@ -41,7 +40,6 @@ export default function RootLayout({ children }) {
             enableSystem
             disableTransitionOnChange
           >
-            <SnowfallItem />
             <div className="container max-w-3xl py-4 grid items-center gap-8 pb-8 pt-6 md:py-8">
               <SiteHeader />
               <main> {children}</main>
