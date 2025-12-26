@@ -2,18 +2,27 @@ import Techs from "@/components/page/techs/page";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
-  title: {
-    default: "Techs | " + siteConfig.title,
-    template: "%s | " + siteConfig.title,
+  title: "Tech Stack",
+  description:
+    "Technologies and tools used by Emre Turkan. Including React, Next.js, TypeScript, Node.js, and more frontend and backend technologies.",
+  keywords: [
+    "tech stack",
+    "React developer skills",
+    "Next.js developer",
+    "TypeScript",
+    "frontend technologies",
+    "web development tools",
+    "JavaScript frameworks",
+  ],
+  openGraph: {
+    title: "Tech Stack | Emre Turkan",
+    description: "Technologies and tools I work with as a Frontend Developer.",
+    url: `${siteConfig.url}/techs`,
+    type: "website",
   },
-  description: siteConfig.description,
-  keywords: siteConfig.keywords + ", techs",
-  url: siteConfig.url + "/techs",
-  author: {
-    name: siteConfig.creator,
-    url: siteConfig.url + "/techs",
+  alternates: {
+    canonical: `${siteConfig.url}/techs`,
   },
-  creator: siteConfig.creator,
 };
 
 const TechsPage = async () => {

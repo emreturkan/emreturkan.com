@@ -1,27 +1,15 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import React from "react";
 
 const Loading = () => {
-  <div className="flex flex-col space-y-3">
-    <Skeleton className="h-[125px] w-[250px] rounded-xl" />
-    <div className="space-y-2">
-      <Skeleton className="h-4 w-[200px]" />
-    </div>
-  </div>;
-
   return (
-    <Card className="border flex h-16 items-center justify-between rounded shadow-sm">
-      <CardContent className="flex items-center  justify-start  ">
-        <Skeleton className="h-16 w-12 rounded-lg" />
-
-        <div className="grid gap-2 px-4 py-2">
-          <Skeleton className="h-4 w-48" />
-
-          <Skeleton className="h-4 w-60" />
-        </div>
-      </CardContent>
-    </Card>
+    <div className="flex items-center gap-3 rounded-lg bg-muted/50 px-3 py-2.5">
+      <Skeleton className="h-[54px] w-9 rounded" />
+      <div className="flex-1 space-y-1.5">
+        <Skeleton className="h-2 w-12" />
+        <Skeleton className="h-3.5 w-28" />
+        <Skeleton className="h-2.5 w-20" />
+      </div>
+    </div>
   );
 };
 

@@ -1,12 +1,13 @@
 import ProjectContent from "./project-content";
 import ProjectTop from "./project-top";
+import { MotionSection } from "@/components/ui/motion-wrapper";
 
 const Project = () => {
   return (
-    <div className="mt-8 grid gap-2">
+    <MotionSection className="mt-16">
       <ProjectTop />
       <ProjectContent />
-    </div>
+    </MotionSection>
   );
 };
 

@@ -1,17 +1,8 @@
-import { Separator } from "@/components/ui/separator";
-
-
-
-async function WatchlistTop() {
-
-
+function WatchlistTop() {
   return (
-    <>
-      <h1 className="text-lg font-semibold text-primary">
-        Watch List
-      </h1>
-      <Separator />
-    </>
+    <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+      Watchlist
+    </h2>
   );
 }
 

@@ -1,47 +1,53 @@
-import React from "react";
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import sharp from "sharp";
-import { getUnsplashPhotos } from "@/lib/actions/get-unsplash";
-const PhotosImage = async () => {
-  const photos = await getUnsplashPhotos();
-  const blurredDataUrls = await Promise.all(
-    photos.map(async (photo) => {
-      const response = await fetch(photo.urls.regular);
-      const blob = await response.blob();
-      const buffer = await blob.arrayBuffer();
-      const { data: base64 } = await sharp(buffer)
-        .resize(100, 100)
-        .jpeg({ quality: 10 })
-        .toBuffer({ resolveWithObject: true });
-      return `data:image/jpeg;base64,${base64.toString("base64")}`;
-    })
-  );
+import { motion } from "framer-motion";
+import { useState } from "react";
+
+function PhotoCard({ photo }) {
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className="columns-1 gap-3 mt-4 sm:columns-2 lg:columns-2 rounded">
-      {photos.map((photo, index) => (
-        <Link
-          href={photo.links.html}
-          key={photo.id}
-          aria-label={photo.alt_description || "Unsplash Emre Turkan Photo"}
-          target="_blank"
-          className="mb-4 p-0 rounded-lg cursor-pointer"
-        >
-          <Image
-            src={photo.urls.regular}
-            alt={photo.alt_description || "Unsplash Emre Turkan Photo"}
-            width={500}
-            height={500}
-            placeholder="blur"
-            blurDataURL={blurredDataUrls[index]}
-            loading="lazy"
-            className="rounded mb-4 "
-          />
-        </Link>
-      ))}
-    </div>
+    <Link
+      href={photo.links.html}
+      aria-label={photo.alt_description || "Photo by Emre Turkan"}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative mb-4 block overflow-hidden rounded-lg"
+    >
+      <div
+        className={`absolute inset-0 bg-muted animate-pulse transition-opacity duration-500 ${
+          isLoaded ? "opacity-0" : "opacity-100"
+        }`}
+        style={{ aspectRatio: `${photo.width}/${photo.height}` }}
+      />
+      <Image
+        src={photo.urls.regular}
+        alt={photo.alt_description || "Photo by Emre Turkan"}
+        width={photo.width}
+        height={photo.height}
+        className={`rounded-lg transition-all duration-700 group-hover:scale-[1.02] ${
+          isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}
+        onLoad={() => setIsLoaded(true)}
+        sizes="(max-width: 640px) 100vw, 50vw"
+      />
+    </Link>
   );
-};
+}
 
-export default PhotosImage;
+export default function PhotosImageClient({ photos }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
+      className="mt-8 columns-1 gap-4 sm:columns-2"
+    >
+      {photos.map((photo) => (
+        <PhotoCard key={photo.id} photo={photo} />
+      ))}
+    </motion.div>
+  );
+}

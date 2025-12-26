@@ -1,22 +1,29 @@
-import PhotosStatistics from "@/components/page/photos/photos-statistics";
-import PhotosImage from "@/components/page/photos/photos-image";
+import PhotosStatistics from "@/components/page/photos/photos-statistics-wrapper";
+import PhotosWrapper from "@/components/page/photos/photos-wrapper";
 import { Suspense } from "react";
 import Loading from "@/components/page/photos/loading";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
-  title: {
-    default: "Photos | " + siteConfig.title,
-    template: "%s | " + siteConfig.title,
+  title: "Photos",
+  description:
+    "Photography portfolio by Emre Turkan. High-quality photos from Unsplash featuring landscapes, architecture, and creative shots.",
+  keywords: [
+    "Emre Turkan photography",
+    "Unsplash photographer",
+    "Istanbul photographer",
+    "landscape photography",
+    "creative photography",
+  ],
+  openGraph: {
+    title: "Photos | Emre Turkan",
+    description: "Photography portfolio by Emre Turkan on Unsplash.",
+    url: `${siteConfig.url}/photos`,
+    type: "website",
   },
-  description: siteConfig.description,
-  keywords: siteConfig.keywords + ", photos",
-  url: siteConfig.url + "/photos",
-  author: {
-    name: siteConfig.creator,
-    url: siteConfig.url + "/photos",
+  alternates: {
+    canonical: `${siteConfig.url}/photos`,
   },
-  creator: siteConfig.creator,
 };
 
 const PhotosPage = () => {
@@ -24,7 +31,7 @@ const PhotosPage = () => {
     <div>
       <PhotosStatistics />
       <Suspense fallback={<Loading />}>
-        <PhotosImage />
+        <PhotosWrapper />
       </Suspense>
     </div>
   );

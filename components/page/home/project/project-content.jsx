@@ -1,10 +1,6 @@
-import React from "react";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { getProject } from "@/lib/actions/get-project";
 import Link from "next/link";
-import { Code, Clock, Star } from "lucide-react";
-import { format } from "date-fns";
-import { JavascriptIcon, PythonIcon, TypescriptIcon } from "@/assets/icons";
+import { Star, ArrowUpRight } from "lucide-react";
 
 const ProjectContent = async () => {
   const projects = await getProject();
@@ -12,51 +8,34 @@ const ProjectContent = async () => {
   const topProjects = projects
     .filter((p) => p.stargazers_count)
     .sort((a, b) => b.stargazers_count - a.stargazers_count)
-    .slice(0, 2);
-
-  const LanguageIcon = (language) => {
-    switch (language) {
-      case "JavaScript":
-        return <JavascriptIcon className="w-3 h-3" />;
-      case "TypeScript":
-        return <TypescriptIcon className="w-3 h-3" />;
-      case "Python":
-        return <PythonIcon className="w-3 h-3" />;
-      default:
-        return <Code className="w-3 h-3" />;
-    }
-  };
+    .slice(0, 3);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      {topProjects.map((project) => (
-        <Link key={project.id} href={project.html_url}>
-          <Card className="group h-full grid px-4  border shadow-sm rounded py-3">
-            <CardContent className="grid gap-1">
-              <h1 className="text-lg font-semibold text-primary group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-color duration-300 ease-in-out">
+    <div className="mt-4 divide-y divide-border/70">
+      {topProjects.map((project, index) => (
+        <Link
+          key={project.id}
+          href={project.html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-start justify-between py-4 transition-colors duration-200 first:pt-0 last:pb-0"
+          style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+        >
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <h3 className="font-medium text-foreground transition-colors duration-200 group-hover:text-foreground/80">
                 {project.name}
-              </h1>
-              <p className="text-xs font-light text-muted-foreground">
-                {project.description
-                  ? `${project?.description?.slice(0, 110)}...`
-                  : "no descriptionno descriptionno descriptionno descriptionno descriptionno descriptionno description description..."}
-              </p>
-              <div className="flex items-center gap-2 ">
-                <div className="flex items-center gap-1">
-                  {LanguageIcon(project.language)}
-                  <p className="text-xs text-muted-foreground">
-                    {project.language}
-                  </p>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Star className="w-3 h-3 fill-muted-foreground stroke-muted-foreground" />
-                  <p className="text-sm text-muted-foreground font-medium">
-                    {project.stargazers_count}
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+              </h3>
+              <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground opacity-0 transition-all duration-200 group-hover:opacity-100" />
+            </div>
+            <p className="text-sm text-muted-foreground line-clamp-1">
+              {project.description || "No description"}
+            </p>
+          </div>
+          <div className="flex items-center gap-1 text-sm text-muted-foreground">
+            <Star className="h-3.5 w-3.5 fill-yellow-500 text-yellow-500" />
+            <span>{project.stargazers_count}</span>
+          </div>
         </Link>
       ))}
     </div>

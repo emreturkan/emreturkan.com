@@ -1,23 +1,32 @@
-import BookmarksPage from "@/components/page/bookmarks/page";
+import BookmarksWrapper from "@/components/page/bookmarks/bookmarks-wrapper";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
-  title: {
-    default: "Bookmarks | " + siteConfig.title,
-    template: "%s | " + siteConfig.title,
+  title: "Bookmarks",
+  description:
+    "Curated collection of articles, resources, and interesting reads about web development, React, JavaScript, and technology by Emre Turkan.",
+  keywords: [
+    "web development resources",
+    "frontend articles",
+    "React resources",
+    "JavaScript articles",
+    "developer bookmarks",
+    "tech articles",
+  ],
+  openGraph: {
+    title: "Bookmarks | Emre Turkan",
+    description:
+      "Curated collection of web development articles and resources.",
+    url: `${siteConfig.url}/bookmarks`,
+    type: "website",
   },
-  description: siteConfig.description,
-  keywords: siteConfig.keywords + ", bookmarks",
-  url: siteConfig.url + "/bookmarks",
-  author: {
-    name: siteConfig.creator,
-    url: siteConfig.url + "/bookmarks",
+  alternates: {
+    canonical: `${siteConfig.url}/bookmarks`,
   },
-  creator: siteConfig.creator,
 };
 
 const Bookmarks = async () => {
-  return <BookmarksPage />;
+  return <BookmarksWrapper />;
 };
 
 export default Bookmarks;

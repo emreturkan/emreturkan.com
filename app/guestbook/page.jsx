@@ -2,19 +2,21 @@ import GuestBookPage from "@/components/page/guestbook";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
-  title: {
-    default: "GuestBook | " + siteConfig.title,
-    template: "%s | " + siteConfig.title,
+  title: "Guestbook",
+  description:
+    "Leave a message in Emre Turkan's guestbook. Share your thoughts, feedback, or just say hello!",
+  keywords: ["guestbook", "leave a message", "visitor comments", "feedback"],
+  openGraph: {
+    title: "Guestbook | Emre Turkan",
+    description: "Leave a message in my guestbook!",
+    url: `${siteConfig.url}/guestbook`,
+    type: "website",
   },
-  description: siteConfig.description,
-  keywords: siteConfig.keywords + ", guestbook",
-  url: siteConfig.url + "/guestbook",
-  author: {
-    name: siteConfig.creator,
-    url: siteConfig.url + "/guestbook",
+  alternates: {
+    canonical: `${siteConfig.url}/guestbook`,
   },
-  creator: siteConfig.creator,
 };
+
 const GuestBook = () => {
   return <GuestBookPage />;
 };
