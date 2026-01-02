@@ -2,23 +2,47 @@ import Techs from "@/components/page/techs/page";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
-  title: "Tech Stack",
+  title: "Tech Stack - React, Next.js, TypeScript & Modern Web Technologies",
   description:
-    "Technologies and tools used by Emre Turkan. Including React, Next.js, TypeScript, Node.js, and more frontend and backend technologies.",
+    "Explore Emre Turkan's tech stack and development tools. Expertise in React, Next.js, TypeScript, Tailwind CSS, Node.js, and modern frontend technologies for building high-performance web applications.",
   keywords: [
-    "tech stack",
+    "tech stack frontend developer",
     "React developer skills",
-    "Next.js developer",
-    "TypeScript",
-    "frontend technologies",
+    "Next.js expert",
+    "TypeScript developer",
+    "frontend technologies 2024",
     "web development tools",
     "JavaScript frameworks",
+    "Tailwind CSS",
+    "Node.js",
+    "GraphQL",
+    "REST API",
+    "Git version control",
+    "Figma design",
+    "Vercel deployment",
+    "modern web development stack",
   ],
   openGraph: {
-    title: "Tech Stack | Emre Turkan",
-    description: "Technologies and tools I work with as a Frontend Developer.",
+    title: "Tech Stack | Emre Turkan - Frontend Developer",
+    description:
+      "Technologies and tools I use: React, Next.js, TypeScript, Tailwind CSS, and more.",
     url: `${siteConfig.url}/techs`,
     type: "website",
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Emre Turkan Tech Stack",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tech Stack | Emre Turkan",
+    description: "My development toolkit: React, Next.js, TypeScript & more",
+    creator: siteConfig.twitterHandle,
+    images: [siteConfig.ogImage],
   },
   alternates: {
     canonical: `${siteConfig.url}/techs`,
@@ -26,7 +50,14 @@ export const metadata = {
 };
 
 const TechsPage = async () => {
-  return <Techs />;
+  return (
+    <section aria-labelledby="techs-heading">
+      <h1 id="techs-heading" className="sr-only">
+        Tech Stack and Development Tools
+      </h1>
+      <Techs />
+    </section>
+  );
 };
 
 export default TechsPage;
