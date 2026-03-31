@@ -231,7 +231,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${GeistSans.className} dot-pattern antialiased`}>
+      <body className={`${GeistSans.className} dot-pattern antialiased`} suppressHydrationWarning>
         {/* Analytics - load with afterInteractive strategy for better performance */}
         <Script
           src="https://eu.umami.is/script.js"

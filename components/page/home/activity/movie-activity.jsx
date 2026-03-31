@@ -5,6 +5,9 @@ import Link from "next/link";
 
 const MovieActivity = async () => {
   const movie = await getMovie();
+  const latest = movie?.results?.[0];
+
+  if (!latest) return null;
 
   return (
     <Link
@@ -14,8 +17,8 @@ const MovieActivity = async () => {
       className="group flex items-center gap-3 rounded-lg bg-muted/50 px-3 py-2.5 transition-colors duration-200 hover:bg-muted/80"
     >
       <Image
-        src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.results[0]?.poster_path}`}
-        alt={movie.results[0].title}
+        src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${latest.poster_path}`}
+        alt={latest.title}
         width={36}
         height={54}
         className="rounded object-cover"
@@ -26,17 +29,19 @@ const MovieActivity = async () => {
           Watched
         </p>
         <h3 className="text-sm font-medium text-foreground truncate">
-          {movie.results[0].title}
+          {latest.title}
         </h3>
         <div className="flex items-center gap-3 text-[11px] text-muted-foreground">
           <span className="flex items-center gap-1">
             <Star className="h-3 w-3 fill-yellow-500 text-yellow-500" />
-            {movie.results[0].vote_average.toFixed(1)}
+            {latest.vote_average?.toFixed(1)}
           </span>
-          <span className="flex items-center gap-1">
-            <Heart className="h-3 w-3 fill-red-500 text-red-500" />
-            {movie.results[0].rating}
-          </span>
+          {latest.rating != null && (
+            <span className="flex items-center gap-1">
+              <Heart className="h-3 w-3 fill-red-500 text-red-500" />
+              {latest.rating}
+            </span>
+          )}
         </div>
       </div>
     </Link>

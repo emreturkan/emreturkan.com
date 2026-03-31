@@ -5,15 +5,22 @@ import { ModeToggle } from "../ui/darkMode";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
 
 const SiteHeader = () => {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const navLinks = [
     { id: 1, name: "Home", path: "/", label: "Go to homepage" },
     { id: 2, name: "Photos", path: "/photos", label: "View photography portfolio" },
     { id: 3, name: "Bookmarks", path: "/bookmarks", label: "Browse bookmarked resources" },
     { id: 4, name: "Tech", path: "/techs", label: "View tech stack" },
+    { id: 5, name: "Games", path: "/games", label: "View gaming collection" },
   ];
 
   const isActive = (path) => {
@@ -56,10 +63,10 @@ const SiteHeader = () => {
                   href={link.path}
                   role="menuitem"
                   aria-label={link.label}
-                  aria-current={isActive(link.path) ? "page" : undefined}
+                  aria-current={mounted && isActive(link.path) ? "page" : undefined}
                   className={cn(
                     "px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                    isActive(link.path) && "text-foreground bg-muted"
+                    mounted && isActive(link.path) && "text-foreground bg-muted"
                   )}
                 >
                   {link.name}

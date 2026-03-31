@@ -1,6 +1,61 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /api/*
+Disallow: /_next/*
+Disallow: /404
+Disallow: /500
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Googlebot-Image
+User-agent: Googlebot-Image
+Allow: /photos
+Allow: /og-image.png
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Slurp
+User-agent: Slurp
+Allow: /
+
+# DuckDuckBot
+User-agent: DuckDuckBot
+Allow: /
+
+# facebookexternalhit
+User-agent: facebookexternalhit
+Allow: /
+
+# Twitterbot
+User-agent: Twitterbot
+Allow: /
+
+# LinkedInBot
+User-agent: LinkedInBot
+Allow: /
+
+# GPTBot
+User-agent: GPTBot
+Disallow: /
+
+# ChatGPT-User
+User-agent: ChatGPT-User
+Disallow: /
+
+# CCBot
+User-agent: CCBot
+Disallow: /
+
+# anthropic-ai
+User-agent: anthropic-ai
+Disallow: /
 
 # Host
 Host: https://emreturkan.com

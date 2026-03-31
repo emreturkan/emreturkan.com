@@ -10,16 +10,17 @@ import Link from "next/link";
 
 const GameActivity = async () => {
   const lastActivity = await getGameActivity();
-  const gameDetail = await getGameDetails(
-    lastActivity.response.games?.[0].appid
-  );
-  const gameImage = `https://steamcdn-a.akamaihd.net/steam/apps/${lastActivity.response.games?.[0].appid}/library_600x900_2x.jpg`;
+  const recentGame = lastActivity?.response?.games?.[0];
 
-  const actived = await getSteamAchievement(
-    lastActivity.response.games?.[0].appid
-  );
+  if (!recentGame) return null;
 
-  const activeAchievements = actived.playerstats.achievements?.filter(
+  const [gameDetail, actived] = await Promise.all([
+    getGameDetails(recentGame.appid),
+    getSteamAchievement(recentGame.appid),
+  ]);
+
+  const gameImage = `https://steamcdn-a.akamaihd.net/steam/apps/${recentGame.appid}/library_600x900_2x.jpg`;
+  const activeAchievements = actived?.playerstats?.achievements?.filter(
     (i) => i.achieved === 1
   );
 
@@ -48,12 +49,14 @@ const GameActivity = async () => {
         <div className="flex items-center gap-3 text-[11px] text-muted-foreground">
           <span className="flex items-center gap-1">
             <Clock className="h-3 w-3 text-blue-500" />
-            {minToHour(lastActivity?.response?.games?.[0]?.playtime_forever)}h
+            {minToHour(recentGame.playtime_forever)}h
           </span>
-          <span className="flex items-center gap-1">
-            <Trophy className="h-3 w-3 text-amber-500" />
-            {activeAchievements?.length}
-          </span>
+          {activeAchievements && (
+            <span className="flex items-center gap-1">
+              <Trophy className="h-3 w-3 text-amber-500" />
+              {activeAchievements.length}
+            </span>
+          )}
         </div>
       </div>
     </Link>

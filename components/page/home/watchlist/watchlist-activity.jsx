@@ -5,7 +5,8 @@ import { getMovieList } from "@/lib/actions/get-movie-list";
 
 const WatchlistActivity = async () => {
   const getList = await getMovieList();
-  const filteredList = getList.items.reverse().slice(0, 4);
+  if (!getList?.items) return null;
+  const filteredList = getList.items.slice(0, 5);
 
   return (
     <div className="mt-4 space-y-1">

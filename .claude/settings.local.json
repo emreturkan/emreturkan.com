@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(xargs basename:*)"
+      "Bash(xargs basename:*)",
+      "Bash(grep -r \"games\\\\|steam\" /Users/emreturkan/Desktop/emreturkan.com/app --include=\"*.jsx\" --include=\"*.js\" 2>/dev/null | head -20)",
+      "Bash(npm run:*)",
+      "Bash(find /Users/emreturkan/Desktop/emreturkan.com -type f -name *movie* -o -name *tv*)",
+      "Bash(grep -r \"cron\\\\|schedule\\\\|interval\\\\|setInterval\" /Users/emreturkan/Desktop/emreturkan.com --include=*.js --include=*.jsx --include=*.ts --include=*.tsx)"
     ]
   }
 }
