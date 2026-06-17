@@ -72,6 +72,20 @@
     content-visibility: auto;
   }
 
+  /* Pointer cursor on every interactive element */
+  a,
+  button,
+  [role="button"],
+  label[for],
+  summary {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
   /* Focus visible for accessibility */
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-ring;

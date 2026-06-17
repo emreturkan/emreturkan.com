@@ -30,7 +30,15 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "shared.akamai.steamstatic.com",
+      },
+      {
+        protocol: "https",
         hostname: "images.igdb.com",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.simpleicons.org",
       },
     ],
     formats: ["image/avif", "image/webp"],

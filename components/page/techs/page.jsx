@@ -1,18 +1,32 @@
 import TechsCards from "@/components/ui/techs-cards";
 import { getTechs } from "@/lib/actions/supabase-tech";
 
+// Preferred display order; any header found in the data but not listed
+// here is appended automatically, so new categories just work.
+const CATEGORY_ORDER = [
+  "languages",
+  "frontend",
+  "framework",
+  "backend",
+  "database",
+  "mobile",
+  "ui",
+  "service",
+  "store",
+  "utils",
+  "ai",
+  "game",
+];
+
 const Techs = async () => {
-  const techs = await getTechs();
+  const techs = (await getTechs()) || [];
+
+  const present = [
+    ...new Set(techs.map((t) => (t.header || "").toLowerCase()).filter(Boolean)),
+  ];
   const categories = [
-    "languages",
-    "frontend",
-    "backend",
-    "mobile",
-    "ui",
-    "service",
-    "store",
-    "utils",
-    "game",
+    ...CATEGORY_ORDER.filter((c) => present.includes(c)),
+    ...present.filter((c) => !CATEGORY_ORDER.includes(c)).sort(),
   ];
 
   return (
@@ -27,7 +41,9 @@ const Techs = async () => {
           <TechsCards
             key={category}
             title={category}
-            techs={techs.filter((tech) => tech.header === category)}
+            techs={techs.filter(
+              (tech) => (tech.header || "").toLowerCase() === category
+            )}
             index={index}
           />
         ))}

@@ -1,11 +1,11 @@
 export const siteConfig = {
   name: "Emre Turkan",
-  title: "Emre Turkan - Frontend Developer | React & Next.js Expert",
+  title: "Emre Turkan - Full Stack Developer | React, Next.js & Node.js",
   description:
-    "Senior Frontend Developer based in Istanbul, Turkey. Specializing in building high-performance web applications with React, Next.js, and TypeScript. Expert in modern JavaScript, responsive design, and user experience optimization.",
-  shortDescription: "Senior Frontend Developer based in Istanbul, Turkey.",
+    "Full Stack Developer based in Istanbul, Turkey. I build scalable ERP and e-commerce platforms end-to-end with React, Next.js, TypeScript, Node.js and Supabase — including banking, POS, marketplace and shipping API integrations.",
+  shortDescription: "Full Stack Developer based in Istanbul, Turkey.",
   url: "https://emreturkan.com",
-  ogImage: "https://emreturkan.com/og-image.png",
+  ogImage: "https://emreturkan.com/og",
   links: {
     github: "https://github.com/emreturkan",
     linkedin: "https://www.linkedin.com/in/emreturkan/",
@@ -15,15 +15,16 @@ export const siteConfig = {
   },
   keywords: [
     "Emre Turkan",
-    "Frontend Developer",
+    "Full Stack Developer",
     "React Developer",
     "Next.js Developer",
+    "Node.js Developer",
     "TypeScript Developer",
     "JavaScript Expert",
     "Web Developer Istanbul",
     "Software Engineer Turkey",
-    "UI Developer",
-    "Frontend Engineer",
+    "ERP Developer",
+    "Full Stack Engineer",
     "React Expert",
     "Next.js Expert",
     "Tailwind CSS Developer",
@@ -61,7 +62,7 @@ export const siteConfig = {
   ],
   experience: {
     company: "EnterERP",
-    role: "Frontend Developer",
+    role: "Full Stack Developer",
     location: "Istanbul, Turkey",
   },
 };

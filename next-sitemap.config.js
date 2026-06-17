@@ -75,7 +75,6 @@ module.exports = {
       "/photos": { priority: 0.9, changefreq: "weekly" },
       "/techs": { priority: 0.8, changefreq: "monthly" },
       "/bookmarks": { priority: 0.7, changefreq: "weekly" },
-      "/i-like-it": { priority: 0.6, changefreq: "monthly" },
     };
 
     const config_route = routeConfig[path] || { priority: 0.5, changefreq: "monthly" };
@@ -103,7 +102,6 @@ module.exports = {
       await config.transform(config, "/photos"),
       await config.transform(config, "/techs"),
       await config.transform(config, "/bookmarks"),
-      await config.transform(config, "/i-like-it"),
     ];
   },
 };

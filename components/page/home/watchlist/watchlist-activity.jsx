@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SafeImage from "@/components/ui/safe-image";
 import { Star } from "lucide-react";
 import Link from "next/link";
 import { getMovieList } from "@/lib/actions/get-movie-list";
@@ -18,8 +18,12 @@ const WatchlistActivity = async () => {
           className="group flex items-center gap-4 py-2 transition-opacity duration-200 hover:opacity-70"
           key={movie.id}
         >
-          <Image
-            src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie?.poster_path}`}
+          <SafeImage
+            src={
+              movie?.poster_path
+                ? `https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`
+                : null
+            }
             alt={movie.title}
             width={32}
             height={48}

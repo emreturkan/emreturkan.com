@@ -9,17 +9,15 @@ Disallow: /500
 # Googlebot
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
 # Googlebot-Image
 User-agent: Googlebot-Image
 Allow: /photos
-Allow: /og-image.png
+Allow: /og
 
 # Bingbot
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
 
 # Slurp
 User-agent: Slurp
@@ -41,21 +39,27 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# GPTBot
+# AI assistants — allowed so they can surface and cite Emre Turkan
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
-# ChatGPT-User
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
 
-# CCBot
-User-agent: CCBot
-Disallow: /
+User-agent: OAI-SearchBot
+Allow: /
 
-# anthropic-ai
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 User-agent: anthropic-ai
-Disallow: /
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
 
 # Host
 Host: https://emreturkan.com

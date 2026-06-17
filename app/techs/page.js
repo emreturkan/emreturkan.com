@@ -4,13 +4,13 @@ import { siteConfig } from "@/config/site";
 export const metadata = {
   title: "Tech Stack - React, Next.js, TypeScript & Modern Web Technologies",
   description:
-    "Explore Emre Turkan's tech stack and development tools. Expertise in React, Next.js, TypeScript, Tailwind CSS, Node.js, and modern frontend technologies for building high-performance web applications.",
+    "Explore Emre Turkan's tech stack and development tools. Expertise in React, Next.js, TypeScript, Tailwind CSS, Node.js, and modern full stack technologies for building high-performance web applications.",
   keywords: [
-    "tech stack frontend developer",
+    "tech stack full stack developer",
     "React developer skills",
     "Next.js expert",
     "TypeScript developer",
-    "frontend technologies 2024",
+    "full stack technologies 2024",
     "web development tools",
     "JavaScript frameworks",
     "Tailwind CSS",
@@ -23,7 +23,7 @@ export const metadata = {
     "modern web development stack",
   ],
   openGraph: {
-    title: "Tech Stack | Emre Turkan - Frontend Developer",
+    title: "Tech Stack | Emre Turkan - Full Stack Developer",
     description:
       "Technologies and tools I use: React, Next.js, TypeScript, Tailwind CSS, and more.",
     url: `${siteConfig.url}/techs`,

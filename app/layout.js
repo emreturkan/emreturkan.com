@@ -3,9 +3,11 @@ import { ThemeProvider } from "@/components/provider/next-theme-provider";
 import NextAuthSessionProvider from "@/components/provider/session-provider";
 import Script from "next/script";
 import SiteHeader from "@/components/layout/site-header";
+import SiteFooter from "@/components/layout/site-footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import { siteConfig } from "@/config/site";
 
 export const viewport = {
@@ -48,7 +50,7 @@ export const metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} - Frontend Developer Portfolio`,
+        alt: `${siteConfig.name} - Full Stack Developer Portfolio`,
         type: "image/png",
       },
     ],
@@ -75,7 +77,9 @@ export const metadata = {
     },
   },
   verification: {
-    google: process.env.GOOGLE_SITE_VERIFICATION || "",
+    google:
+      process.env.GOOGLE_SITE_VERIFICATION ||
+      "tVU1cwNWQ3ZpTW1F8SeLJ5nopPjwfMnH4gg6cO8hMJo",
     yandex: process.env.YANDEX_VERIFICATION || "",
   },
   alternates: {
@@ -138,10 +142,16 @@ const personJsonLd = {
   },
   knowsAbout: siteConfig.skills,
   knowsLanguage: ["Turkish", "English"],
-  alumniOf: {
-    "@type": "EducationalOrganization",
-    name: "University",
-  },
+  alumniOf: [
+    {
+      "@type": "EducationalOrganization",
+      name: "Kastamonu University",
+    },
+    {
+      "@type": "EducationalOrganization",
+      name: "Burdur Mehmet Akif Ersoy University",
+    },
+  ],
 };
 
 const websiteJsonLd = {
@@ -155,21 +165,13 @@ const websiteJsonLd = {
     "@id": `${siteConfig.url}/#person`,
   },
   inLanguage: "en-US",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: `${siteConfig.url}/search?q={search_term_string}`,
-    },
-    "query-input": "required name=search_term_string",
-  },
 };
 
 const professionalServiceJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "@id": `${siteConfig.url}/#service`,
-  name: `${siteConfig.name} - Frontend Development`,
+  name: `${siteConfig.name} - Full Stack Development`,
   description: siteConfig.description,
   url: siteConfig.url,
   image: siteConfig.ogImage,
@@ -194,11 +196,12 @@ const professionalServiceJsonLd = {
     geoRadius: "50000",
   },
   serviceType: [
-    "Frontend Development",
+    "Full Stack Development",
     "React Development",
     "Next.js Development",
+    "Node.js Development",
     "Web Application Development",
-    "UI/UX Implementation",
+    "ERP & E-commerce Development",
   ],
   provider: {
     "@id": `${siteConfig.url}/#person`,
@@ -219,10 +222,8 @@ export default function RootLayout({ children }) {
         <link rel="dns-prefetch" href="https://api.unsplash.com" />
         <link rel="dns-prefetch" href="https://api.themoviedb.org" />
 
-        {/* Favicon and icons */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* Favicon (app/favicon.ico) and apple icon (app/apple-icon.js) are
+            wired automatically by Next.js — only the manifest is manual. */}
         <link rel="manifest" href="/manifest.json" />
 
         {/* Structured Data */}
@@ -231,7 +232,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${GeistSans.className} dot-pattern antialiased`} suppressHydrationWarning>
+      <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans dot-pattern antialiased`} suppressHydrationWarning>
         {/* Analytics - load with afterInteractive strategy for better performance */}
         <Script
           src="https://eu.umami.is/script.js"
@@ -253,6 +254,7 @@ export default function RootLayout({ children }) {
               <main id="main-content" className="mt-12" role="main">
                 {children}
               </main>
+              <SiteFooter />
             </div>
             <Analytics />
             <SpeedInsights />

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { BadgeCheck } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -29,15 +30,19 @@ const Welcome = () => {
     >
       <motion.h1
         variants={fadeInUp}
-        className="text-xl font-medium tracking-tight"
+        className="flex items-center gap-1.5 text-xl font-medium tracking-tight"
       >
         Emre Turkan
+        <BadgeCheck
+          className="h-5 w-5 fill-[#0099ff] text-white"
+          aria-label="Verified"
+        />
       </motion.h1>
       <motion.p
         variants={fadeInUp}
-        className="mt-1 text-sm text-muted-foreground"
+        className="mt-1 font-mono text-sm text-muted-foreground"
       >
-        Frontend Developer
+        Full Stack Developer · Istanbul
       </motion.p>
 
       <motion.div
@@ -45,8 +50,9 @@ const Welcome = () => {
         className="mt-8 space-y-4 text-[15px] leading-7 text-foreground/90"
       >
         <p>
-          I am currently living in Istanbul and working as a Frontend Developer
-          at{" "}
+          hey, i&apos;m emre — a full stack developer based in istanbul. i build
+          erp &amp; e-commerce platforms end-to-end with next.js, react &amp;
+          node.js, currently at{" "}
           <Link
             target="_blank"
             className="underline decoration-muted-foreground/50 underline-offset-2 transition-colors duration-200 hover:decoration-foreground"
@@ -57,14 +63,18 @@ const Welcome = () => {
           .
         </p>
         <p>
-          I like 3D modeling, taking photos, playing games and developing
-          projects. Recently I am interested in FPV Drone and flying drones.
-        </p>
-        <p>
-          For now, I'm interested in game development in my free time and I'm
-          learning Unity.
+          outside work i&apos;m into 3d modeling, photography and flying fpv
+          drones. just building things and figuring it out as i go.
         </p>
       </motion.div>
+
+      <motion.p
+        variants={fadeInUp}
+        className="mt-6 font-mono text-xs text-muted-foreground/80"
+      >
+        <span className="text-emerald-500">now</span> — building games with
+        unity
+      </motion.p>
     </motion.section>
   );
 };

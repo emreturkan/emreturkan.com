@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SafeImage from "@/components/ui/safe-image";
 import { getMovie } from "@/lib/actions/get-movie";
 import { Star, Heart } from "lucide-react";
 import Link from "next/link";
@@ -16,8 +16,12 @@ const MovieActivity = async () => {
       rel="noopener noreferrer"
       className="group flex items-center gap-3 rounded-lg bg-muted/50 px-3 py-2.5 transition-colors duration-200 hover:bg-muted/80"
     >
-      <Image
-        src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${latest.poster_path}`}
+      <SafeImage
+        src={
+          latest.poster_path
+            ? `https://image.tmdb.org/t/p/w600_and_h900_bestv2${latest.poster_path}`
+            : null
+        }
         alt={latest.title}
         width={36}
         height={54}
@@ -25,7 +29,7 @@ const MovieActivity = async () => {
         priority
       />
       <div className="flex-1 min-w-0">
-        <p className="text-[10px] font-medium uppercase tracking-wider text-red-500">
+        <p className="font-mono text-[10px] font-medium uppercase tracking-wider text-red-500">
           Watched
         </p>
         <h3 className="text-sm font-medium text-foreground truncate">

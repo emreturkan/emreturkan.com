@@ -32,7 +32,7 @@ export default function BookmarksClient({ bookmarks }) {
             <p className="mt-1 text-sm text-muted-foreground line-clamp-1">
               {bookmark.excerpt}
             </p>
-            <div className="mt-1.5 flex items-center gap-2 text-xs text-muted-foreground/70">
+            <div className="mt-1.5 flex items-center gap-2 font-mono text-xs text-muted-foreground/70">
               <span>{bookmark.domain}</span>
               <span>·</span>
               <span>{ConvertDate(bookmark.created)}</span>

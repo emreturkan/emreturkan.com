@@ -5,7 +5,7 @@ import { Star, ArrowUpRight } from "lucide-react";
 const ProjectContent = async () => {
   const projects = await getProject();
 
-  const topProjects = projects
+  const topProjects = (Array.isArray(projects) ? projects : [])
     .filter((p) => p.stargazers_count)
     .sort((a, b) => b.stargazers_count - a.stargazers_count)
     .slice(0, 3);

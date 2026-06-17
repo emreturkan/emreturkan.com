@@ -60,7 +60,7 @@ const Socials = () => {
               href={social.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2 text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground"
+              className="group flex cursor-pointer items-center gap-2 text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground"
             >
               {social.icon}
               <span>{social.name}</span>
