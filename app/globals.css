@@ -62,9 +62,15 @@
     text-rendering: optimizeLegibility;
   }
 
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   /* Optimize image rendering */

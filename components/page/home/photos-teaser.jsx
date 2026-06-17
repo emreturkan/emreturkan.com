@@ -5,13 +5,13 @@ import { getUnsplashPhotos } from "@/lib/actions/get-unsplash";
 import { MotionSection } from "@/components/ui/motion-wrapper";
 import { cn } from "@/lib/utils";
 
-// Tilt / stacking / overlap per photo — kept as literal classes so Tailwind
-// picks them up. Each photo straightens and pops to the front on hover.
+// Tilt / stacking / overlap per photo for the desktop fan. Literal classes so
+// Tailwind keeps them. Each photo straightens and pops to the front on hover.
 const layout = [
   { rotate: "-rotate-6", z: "z-10", ml: "" },
-  { rotate: "rotate-3", z: "z-20", ml: "-ml-10 sm:-ml-14" },
-  { rotate: "-rotate-3", z: "z-30", ml: "-ml-10 sm:-ml-14" },
-  { rotate: "rotate-6", z: "z-40", ml: "-ml-10 sm:-ml-14" },
+  { rotate: "rotate-3", z: "z-20", ml: "-ml-14" },
+  { rotate: "-rotate-3", z: "z-30", ml: "-ml-14" },
+  { rotate: "rotate-6", z: "z-40", ml: "-ml-14" },
 ];
 
 const PhotosTeaser = async () => {
@@ -29,7 +29,28 @@ const PhotosTeaser = async () => {
         A few of my favorite shots
       </p>
 
-      <div className="mt-8 flex items-center justify-center overflow-visible py-2">
+      {/* Mobile: clean 2-up grid — no overlap, no horizontal overflow */}
+      <div className="mt-5 grid grid-cols-2 gap-3 sm:hidden">
+        {top.map((photo) => (
+          <Link
+            key={photo.id}
+            href="/photos"
+            aria-label="View photography portfolio"
+            className="relative aspect-[4/5] overflow-hidden rounded-xl bg-muted"
+          >
+            <Image
+              src={photo.urls.small}
+              alt={photo.alt_description || "Photo by Emre Turkan"}
+              fill
+              sizes="50vw"
+              className="object-cover"
+            />
+          </Link>
+        ))}
+      </div>
+
+      {/* Desktop: scattered polaroid fan */}
+      <div className="mt-8 hidden items-center justify-center py-2 sm:flex">
         {top.map((photo, i) => (
           <Link
             key={photo.id}
@@ -42,12 +63,12 @@ const PhotosTeaser = async () => {
               layout[i % layout.length].ml
             )}
           >
-            <div className="relative h-40 w-32 overflow-hidden rounded-[2px] sm:h-52 sm:w-44">
+            <div className="relative h-52 w-44 overflow-hidden rounded-[2px]">
               <Image
                 src={photo.urls.small}
                 alt={photo.alt_description || "Photo by Emre Turkan"}
                 fill
-                sizes="(max-width: 640px) 128px, 176px"
+                sizes="176px"
                 className="object-cover"
               />
             </div>
