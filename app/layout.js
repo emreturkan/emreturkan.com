@@ -208,7 +208,22 @@ const professionalServiceJsonLd = {
   },
 };
 
-const jsonLd = [personJsonLd, websiteJsonLd, professionalServiceJsonLd];
+const profilePageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": `${siteConfig.url}/#profilepage`,
+  url: siteConfig.url,
+  name: `${siteConfig.name} - ${siteConfig.experience.role}`,
+  dateModified: "2026-06-17",
+  mainEntity: { "@id": `${siteConfig.url}/#person` },
+};
+
+const jsonLd = [
+  personJsonLd,
+  websiteJsonLd,
+  professionalServiceJsonLd,
+  profilePageJsonLd,
+];
 
 export default function RootLayout({ children }) {
   return (

@@ -52,7 +52,7 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <article itemScope itemType="https://schema.org/ProfilePage">
+    <article>
       <Welcome />
       <Socials />
       <CopyEmail />
