@@ -176,3 +176,19 @@
   animation: shimmer 1.5s infinite;
 }
 
+/* Live "now playing" equalizer bars */
+@keyframes eq {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.eq-bar {
+  transform-origin: bottom;
+  animation: eq 1s ease-in-out infinite;
+}
+

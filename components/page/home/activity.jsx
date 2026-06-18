@@ -7,7 +7,7 @@ import { MotionSection } from "@/components/ui/motion-wrapper";
 const Activity = async () => {
   return (
     <MotionSection className="mt-16">
-      <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+      <h2 className="font-mono text-xs font-medium uppercase tracking-widest text-muted-foreground">
         Currently
       </h2>
       <div className="mt-4 grid gap-4 md:grid-cols-2">
