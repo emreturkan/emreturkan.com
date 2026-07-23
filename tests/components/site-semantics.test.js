@@ -37,6 +37,11 @@ test("uses visible, descriptive control labels", () => {
   assert.doesNotMatch(gameActivity, />\s*Playing\s*</);
 });
 
+test("uses Steam's verified store artwork without a failing cover probe", () => {
+  assert.doesNotMatch(gameActivity, /library_600x900_2x/);
+  assert.match(gameActivity, /gameDetail\?\.header_image/);
+});
+
 test("content routes do not add redundant hidden h1 elements", () => {
   for (const source of [photosPage, bookmarksPage, techsPage]) {
     assert.doesNotMatch(source, /className="sr-only"/);

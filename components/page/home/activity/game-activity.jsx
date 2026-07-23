@@ -18,13 +18,10 @@ const GameActivity = async () => {
     getSteamAchievement(recentGame.appid),
   ]);
 
-  // Portrait cover preferred; fall back to Steam's real image URLs. Center-
-  // cropped into the fixed thumbnail, so any aspect ratio is safe.
-  const gameImage = `https://steamcdn-a.akamaihd.net/steam/apps/${recentGame.appid}/library_600x900_2x.jpg`;
-  const gameImageFallback = [
-    gameDetail?.header_image,
-    gameDetail?.capsule_image,
-  ].filter(Boolean);
+  // Steam's store API returns verified artwork URLs. Avoid guessing a library
+  // cover path because older games may not publish that asset.
+  const gameImage = gameDetail?.header_image;
+  const gameImageFallback = gameDetail?.capsule_image;
   const activeAchievements = actived?.playerstats?.achievements?.filter(
     (i) => i.achieved === 1
   );
