@@ -10,7 +10,7 @@ import Welcome from "@/components/page/home/welcome";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
-  title: "Emre Turkan - Full Stack Developer | React, Next.js & Node.js Istanbul",
+  title: { absolute: siteConfig.homeTitle },
   description: `${siteConfig.description} View my projects, tech stack, and professional journey in web development.`,
   keywords: [
     ...siteConfig.keywords,

@@ -84,10 +84,6 @@ export const metadata = {
   },
   alternates: {
     canonical: siteConfig.url,
-    languages: {
-      "en-US": siteConfig.url,
-      "tr-TR": `${siteConfig.url}/tr`,
-    },
   },
   category: "technology",
   classification: "Portfolio",
@@ -108,6 +104,7 @@ const personJsonLd = {
   "@type": "Person",
   "@id": `${siteConfig.url}/#person`,
   name: siteConfig.name,
+  alternateName: siteConfig.alternateNames,
   givenName: "Emre",
   familyName: "Turkan",
   url: siteConfig.url,

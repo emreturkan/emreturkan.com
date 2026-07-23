@@ -1,5 +1,7 @@
 export const siteConfig = {
   name: "Emre Turkan",
+  homeTitle: "Emre Turkan — Full Stack Developer in Istanbul",
+  alternateNames: ["Emre Türkan", "emreturkan"],
   title: "Emre Turkan - Full Stack Developer | React, Next.js & Node.js",
   description:
     "Full Stack Developer based in Istanbul, Turkey. I build scalable ERP and e-commerce platforms end-to-end with React, Next.js, TypeScript, Node.js and Supabase — including banking, POS, marketplace and shipping API integrations.",
