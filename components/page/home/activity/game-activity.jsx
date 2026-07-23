@@ -9,8 +9,7 @@ import { minToHour } from "@/lib/utils";
 import Link from "next/link";
 
 const GameActivity = async () => {
-  const lastActivity = await getGameActivity();
-  const recentGame = lastActivity?.response?.games?.[0];
+  const recentGame = await getGameActivity();
 
   if (!recentGame) return null;
 
