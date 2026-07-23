@@ -51,10 +51,7 @@ export const metadata = {
 
 const TechsPage = async () => {
   return (
-    <section aria-labelledby="techs-heading">
-      <h1 id="techs-heading" className="sr-only">
-        Tech Stack and Development Tools
-      </h1>
+    <section>
       <Techs />
     </section>
   );

@@ -8,6 +8,7 @@ import PhotosTeaser from "@/components/page/home/photos-teaser";
 import Watchlist from "@/components/page/home/watchlist";
 import Welcome from "@/components/page/home/welcome";
 import { siteConfig } from "@/config/site";
+import { homeJsonLd } from "@/lib/seo/home-structured-data";
 
 export const metadata = {
   title: { absolute: siteConfig.homeTitle },
@@ -53,6 +54,12 @@ export const metadata = {
 export default function HomePage() {
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homeJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <Welcome />
       <Socials />
       <CopyEmail />

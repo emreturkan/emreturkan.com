@@ -49,10 +49,7 @@ export const metadata = {
 
 const PhotosPage = () => {
   return (
-    <section aria-labelledby="photos-heading">
-      <h1 id="photos-heading" className="sr-only">
-        Photography Portfolio by Emre Turkan
-      </h1>
+    <section>
       <PhotosStatistics />
       <Suspense fallback={<Loading />}>
         <PhotosWrapper />

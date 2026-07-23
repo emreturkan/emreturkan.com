@@ -81,7 +81,7 @@ const PhotosTeaser = async () => {
           href="/photos"
           className="group inline-flex items-center gap-1 font-mono text-xs text-muted-foreground transition-colors duration-200 hover:text-foreground"
         >
-          see more
+          view all photos
           <ArrowUpRight className="h-3 w-3 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </Link>
       </div>

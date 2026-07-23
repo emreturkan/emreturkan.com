@@ -50,7 +50,7 @@ const GameActivity = async () => {
       <div className="min-w-0 flex-1">
         <p className="flex items-center gap-1.5 font-mono text-[10px] font-medium uppercase tracking-wider text-emerald-500">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" />
-          Playing
+          Last played
         </p>
         <h3 className="mt-0.5 truncate text-sm font-medium text-foreground">
           {gameDetail?.name}

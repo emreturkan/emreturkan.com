@@ -48,10 +48,7 @@ export const metadata = {
 
 const Bookmarks = async () => {
   return (
-    <section aria-labelledby="bookmarks-heading">
-      <h1 id="bookmarks-heading" className="sr-only">
-        Developer Bookmarks and Resources
-      </h1>
+    <section>
       <BookmarksWrapper />
     </section>
   );

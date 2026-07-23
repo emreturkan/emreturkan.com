@@ -48,7 +48,6 @@ const CopyEmail = () => {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5, duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
-      aria-label={`Copy email address ${EMAIL}`}
       className="group mt-8 inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors duration-200 hover:text-foreground"
     >
       {copied ? (

@@ -7,6 +7,10 @@ const layoutSource = await readFile(
   new URL("../../app/layout.js", import.meta.url),
   "utf8"
 );
+const structuredDataSource = await readFile(
+  new URL("../../lib/seo/home-structured-data.js", import.meta.url),
+  "utf8"
+).catch(() => "");
 const homeSource = await readFile(
   new URL("../../app/(home)/page.js", import.meta.url),
   "utf8"
@@ -15,7 +19,10 @@ const homeSource = await readFile(
 test("keeps Turkan canonical and exposes the accented spelling as an alternate", () => {
   assert.equal(siteConfig.name, "Emre Turkan");
   assert.deepEqual(siteConfig.alternateNames, ["Emre Türkan", "emreturkan"]);
-  assert.match(layoutSource, /alternateName: siteConfig\.alternateNames/);
+  assert.match(
+    structuredDataSource,
+    /alternateName: siteConfig\.alternateNames/
+  );
 });
 
 test("uses a concise absolute homepage title", () => {

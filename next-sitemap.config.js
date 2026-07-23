@@ -3,10 +3,11 @@ module.exports = {
   siteUrl: "https://emreturkan.com",
   generateRobotsTxt: true,
   generateIndexSitemap: true,
+  autoLastmod: false,
   changefreq: "weekly",
   priority: 0.7,
   sitemapSize: 7000,
-  exclude: ["/api/*", "/_next/*", "/404", "/500"],
+  exclude: ["/api/*", "/_next/*", "/404", "/500", "/apple-icon"],
   robotsTxtOptions: {
     additionalSitemaps: [],
     policies: [
@@ -22,7 +23,7 @@ module.exports = {
       },
       {
         userAgent: "Googlebot-Image",
-        allow: ["/photos", "/og-image.png"],
+        allow: ["/photos", "/og"],
       },
       {
         userAgent: "Bingbot",
@@ -49,22 +50,33 @@ module.exports = {
         userAgent: "LinkedInBot",
         allow: "/",
       },
-      // Block AI crawlers that don't respect content
       {
         userAgent: "GPTBot",
-        disallow: "/",
+        allow: "/",
       },
       {
         userAgent: "ChatGPT-User",
-        disallow: "/",
+        allow: "/",
       },
       {
-        userAgent: "CCBot",
-        disallow: "/",
+        userAgent: "OAI-SearchBot",
+        allow: "/",
+      },
+      {
+        userAgent: "PerplexityBot",
+        allow: "/",
+      },
+      {
+        userAgent: "Google-Extended",
+        allow: "/",
       },
       {
         userAgent: "anthropic-ai",
-        disallow: "/",
+        allow: "/",
+      },
+      {
+        userAgent: "ClaudeBot",
+        allow: "/",
       },
     ],
   },
@@ -83,25 +95,6 @@ module.exports = {
       loc: path,
       changefreq: config_route.changefreq,
       priority: config_route.priority,
-      lastmod: new Date().toISOString(),
-      alternateRefs: [
-        {
-          href: `https://emreturkan.com${path}`,
-          hreflang: "en",
-        },
-        {
-          href: `https://emreturkan.com${path}`,
-          hreflang: "x-default",
-        },
-      ],
     };
-  },
-  additionalPaths: async (config) => {
-    return [
-      await config.transform(config, "/"),
-      await config.transform(config, "/photos"),
-      await config.transform(config, "/techs"),
-      await config.transform(config, "/bookmarks"),
-    ];
   },
 };

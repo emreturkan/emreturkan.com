@@ -1,7 +1,7 @@
 {
-  "name": "Emre Turkan - Frontend Developer",
+  "name": "Emre Turkan - Full Stack Developer",
   "short_name": "Emre Turkan",
-  "description": "Senior Frontend Developer based in Istanbul, Turkey. Specializing in React, Next.js, and TypeScript.",
+  "description": "Full Stack Developer based in Istanbul, Turkey. Building ERP and e-commerce platforms with React, Next.js, TypeScript, and Node.js.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
@@ -18,25 +18,10 @@
       "type": "image/x-icon"
     },
     {
-      "src": "/icon-192.png",
-      "sizes": "192x192",
+      "src": "/apple-icon",
+      "sizes": "180x180",
       "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/og-image.png",
-      "sizes": "1200x630",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Emre Turkan Portfolio"
+      "purpose": "any"
     }
   ],
   "related_applications": [],

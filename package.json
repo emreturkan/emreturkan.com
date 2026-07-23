@@ -8,7 +8,7 @@
     "postbuild": "next-sitemap --config next-sitemap.config.js --sitemap-xml",
     "sitemap": "next-sitemap --config next-sitemap.config.js",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.2",
@@ -49,6 +49,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.1",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.16"
   }

@@ -9,6 +9,7 @@ Disallow: /500
 # Googlebot
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 # Googlebot-Image
 User-agent: Googlebot-Image
@@ -18,6 +19,7 @@ Allow: /og
 # Bingbot
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 # Slurp
 User-agent: Slurp
@@ -39,25 +41,31 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# AI assistants — allowed so they can surface and cite Emre Turkan
+# GPTBot
 User-agent: GPTBot
 Allow: /
 
+# ChatGPT-User
 User-agent: ChatGPT-User
 Allow: /
 
+# OAI-SearchBot
 User-agent: OAI-SearchBot
 Allow: /
 
+# PerplexityBot
 User-agent: PerplexityBot
 Allow: /
 
+# Google-Extended
 User-agent: Google-Extended
 Allow: /
 
+# anthropic-ai
 User-agent: anthropic-ai
 Allow: /
 
+# ClaudeBot
 User-agent: ClaudeBot
 Allow: /
 
