@@ -50,6 +50,8 @@ const PhotoCard = memo(function PhotoCard({ photo, priority = false }) {
 });
 
 export default function PhotosImageClient({ photos }) {
+  const safePhotos = Array.isArray(photos) ? photos : [];
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -59,7 +61,7 @@ export default function PhotosImageClient({ photos }) {
       role="list"
       aria-label="Photo gallery"
     >
-      {photos.map((photo, index) => (
+      {safePhotos.map((photo, index) => (
         <div key={photo.id} role="listitem">
           <PhotoCard
             photo={photo}

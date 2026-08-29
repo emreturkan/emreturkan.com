@@ -24,6 +24,9 @@ export async function POST() {
     return NextResponse.json(tokenData);
   } catch (error) {
     console.error("Error refreshing token:", error.message);
-    res.status(500).json({ error: "Internal Server Error" });
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
   }
 }
