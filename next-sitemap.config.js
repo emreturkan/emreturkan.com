@@ -87,10 +87,6 @@ module.exports = {
       "/photos": { priority: 0.9, changefreq: "weekly" },
       "/techs": { priority: 0.8, changefreq: "monthly" },
       "/bookmarks": { priority: 0.7, changefreq: "weekly" },
-      "/spendwise": { priority: 0.9, changefreq: "weekly" },
-      "/spendwise/privacy": { priority: 0.6, changefreq: "monthly" },
-      "/spendwise/terms": { priority: 0.6, changefreq: "monthly" },
-      "/spendwise/data-deletion": { priority: 0.6, changefreq: "monthly" },
     };
 
     const config_route = routeConfig[path] || { priority: 0.5, changefreq: "monthly" };

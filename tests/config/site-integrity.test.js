@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import test from "node:test";
 
@@ -13,6 +13,14 @@ const manifest = JSON.parse(
 );
 const sitemapXml = await readFile(
   new URL("../../public/sitemap-0.xml", import.meta.url),
+  "utf8"
+);
+const homeSource = await readFile(
+  new URL("../../app/(home)/page.js", import.meta.url),
+  "utf8"
+);
+const headerSource = await readFile(
+  new URL("../../components/layout/site-header.jsx", import.meta.url),
   "utf8"
 );
 
@@ -71,4 +79,19 @@ test("publishes only real routes without duplicated alternate paths", () => {
     "https://emreturkan.com/techs",
   ]);
   assert.doesNotMatch(sitemapXml, /hreflang|games|i-like-it|\/photos\/photos/);
+});
+
+test("keeps Spendwise out of the public site", async () => {
+  assert.doesNotMatch(homeSource, /Spendwise|\/spendwise/i);
+  assert.doesNotMatch(headerSource, /Spendwise|\/spendwise/i);
+  assert.doesNotMatch(sitemapXml, /\/spendwise/i);
+  assert.doesNotMatch(JSON.stringify(sitemapConfig), /\/spendwise/i);
+  for (const route of [
+    "../../app/spendwise/page.jsx",
+    "../../app/spendwise/privacy/page.jsx",
+    "../../app/spendwise/terms/page.jsx",
+    "../../app/spendwise/data-deletion/page.jsx",
+  ]) {
+    await assert.rejects(access(new URL(route, import.meta.url)));
+  }
 });
