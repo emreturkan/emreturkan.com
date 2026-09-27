@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Photos", path: "/photos" },
+  { name: "FPV", path: "/fpv" },
   { name: "Bookmarks", path: "/bookmarks" },
   { name: "Tech", path: "/techs" },
 ];
@@ -63,7 +64,7 @@ const SiteHeader = () => {
           </div>
           <ModeToggle />
         </div>
-        <ul className="mt-4 grid grid-cols-4 gap-1 sm:hidden">
+        <ul className="mt-4 grid grid-cols-3 gap-1 sm:hidden">
           {navLinks.map((link) => (
             <li key={link.path}>
               <Link

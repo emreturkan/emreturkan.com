@@ -63,8 +63,14 @@ const Welcome = () => {
           .
         </p>
         <p>
-          outside work i&apos;m into 3d modeling, photography and flying fpv
-          drones. just building things and figuring it out as i go.
+          outside work i&apos;m into 3d modeling, photography and flying{" "}
+          <Link
+            href="/fpv"
+            className="underline decoration-muted-foreground/50 underline-offset-2 transition-colors duration-200 hover:decoration-foreground"
+          >
+            fpv drones
+          </Link>
+          . just building things and figuring it out as i go.
         </p>
       </motion.div>
 

@@ -25,7 +25,7 @@ const [
 
 test("uses native navigation semantics with a mobile link row", () => {
   assert.doesNotMatch(header, /role="menubar"|role="menuitem"/);
-  assert.match(header, /grid-cols-4/);
+  assert.match(header, /grid-cols-3/);
   assert.match(header, /sm:hidden/);
   assert.doesNotMatch(header, /setMounted|useEffect|useState/);
 });

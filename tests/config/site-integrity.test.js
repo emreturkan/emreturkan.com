@@ -75,6 +75,7 @@ test("publishes only real routes without duplicated alternate paths", () => {
   assert.deepEqual(locations, [
     "https://emreturkan.com",
     "https://emreturkan.com/bookmarks",
+    "https://emreturkan.com/fpv",
     "https://emreturkan.com/photos",
     "https://emreturkan.com/techs",
   ]);
