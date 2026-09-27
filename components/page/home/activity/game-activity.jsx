@@ -18,10 +18,15 @@ const GameActivity = async () => {
     getSteamAchievement(recentGame.appid),
   ]);
 
-  // Steam's store API returns verified artwork URLs. Avoid guessing a library
-  // cover path because older games may not publish that asset.
+  // The owned-games response includes the name and icon even when the
+  // separate store-details request is unavailable.
+  const gameName =
+    gameDetail?.name || recentGame.name || `Steam game ${recentGame.appid}`;
   const gameImage = gameDetail?.header_image;
-  const gameImageFallback = gameDetail?.capsule_image;
+  const gameIcon = recentGame.img_icon_url
+    ? `https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/${recentGame.appid}/${recentGame.img_icon_url}.jpg`
+    : null;
+  const gameImageFallback = [gameDetail?.capsule_image, gameIcon];
   const activeAchievements = actived?.playerstats?.achievements?.filter(
     (i) => i.achieved === 1
   );
@@ -37,7 +42,7 @@ const GameActivity = async () => {
         <SafeImage
           src={gameImage}
           fallbackSrc={gameImageFallback}
-          alt={gameDetail?.name || "Game cover"}
+          alt={`${gameName} cover`}
           fill
           className="object-cover"
           priority
@@ -50,7 +55,7 @@ const GameActivity = async () => {
           Last played
         </p>
         <h3 className="mt-0.5 truncate text-sm font-medium text-foreground">
-          {gameDetail?.name}
+          {gameName}
         </h3>
         <div className="mt-0.5 flex items-center gap-3 text-[11px] text-muted-foreground">
           <span className="flex items-center gap-1">
